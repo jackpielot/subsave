@@ -180,20 +180,57 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
 
 /* sync panel */
 .sync-panel{background:var(--surface);border:1px solid var(--bdr);border-radius:var(--r);padding:16px;margin-bottom:14px;}
-.sync-id-box{background:var(--s2);border-radius:var(--rs);padding:10px 12px;font-family:monospace;font-size:13px;color:var(--ink);letter-spacing:.04em;text-align:center;margin:10px 0;}
+.sync-id-box{background:var(--s2);border-radius:var(--rs);padding:10px 12px;font-family:monospace;font-size:16px;font-weight:600;color:var(--ink);letter-spacing:.1em;text-align:center;margin:10px 0;cursor:text;user-select:all;-webkit-user-select:all;}
 .sync-status{font-size:12px;color:var(--ink3);text-align:center;margin-top:6px;}
 
 /* cat colors */
 .cat-video{background:#FDEAEA;}.cat-music{background:#E8F5E9;}.cat-cloud{background:#E3F2FD;}
 .cat-creative{background:#FFF3E0;}.cat-work{background:#F3E5F5;}.cat-news{background:#E0F2F1;}.cat-other{background:#F5F5F5;}
+.cat-game{background:#FDE68A;}.cat-book{background:#D1FAE5;}.cat-learning{background:#EDE9FE;}
+.cat-health{background:#ECFDF5;}.cat-security{background:#F1F5F9;}.cat-ai{background:#F0F9FF;}
+.cat-finance{background:#FEF3C7;}.cat-food{background:#FFF7ED;}.cat-sport{background:#F0FDF4;}
 .hk-food{background:#FDEAEA;}.hk-transport{background:#E3F2FD;}.hk-eat-out{background:#FFF3E0;}
 .hk-leisure{background:#F0EAFB;}.hk-health{background:#E8F5E9;}.hk-income{background:#E8F2EB;}.hk-other{background:#F5F5F5;}
 .hk-fitness{background:#FEF3C7;}.hk-education{background:#EDE9FE;}.hk-loan{background:#FFE4E6;}
 .hk-utility{background:#ECFDF5;}.hk-clothing{background:#FDF2F8;}.hk-travel{background:#EFF6FF;}
 .hk-pet{background:#FFF7ED;}.hk-gift{background:#FDF4FF;}.hk-tax{background:#F1F5F9;}
+.hk-rent{background:#EEF2FF;}.hk-internet{background:#E0F2FE;}.hk-beauty{background:#FDF2F8;}
+.hk-alcohol{background:#FFFBEB;}.hk-appliance{background:#F8FAFC;}.hk-sub{background:#F5F3FF;}
+.hk-part-time{background:#ECFDF5;}
 
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-size:13px;padding:8px 16px;border-radius:24px;opacity:0;transition:opacity .3s,transform .3s;z-index:999;pointer-events:none;white-space:nowrap;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+/* AIリアルタイム分析カード */
+.ai-live-card{border-radius:var(--r);padding:13px 15px;margin-bottom:14px;border:1px solid var(--bdr);background:var(--surface);animation:fi .3s ease;}
+.ai-live-card.warn{background:var(--warn-l);border-color:rgba(184,134,11,.25);}
+.ai-live-card.ok{background:var(--acc-l);border-color:rgba(45,90,61,.2);}
+.ai-live-card.danger{background:var(--red-l);border-color:rgba(196,71,42,.2);}
+.ai-live-icon{font-size:18px;margin-right:8px;}
+.ai-live-title{font-size:12px;font-weight:500;margin-bottom:3px;}
+.ai-live-body{font-size:12px;line-height:1.7;color:var(--ink2);}
+/* カウンセリングチャット */
+.chat-wrap{display:flex;flex-direction:column;gap:10px;margin-top:16px;height:360px;overflow-y:auto;padding:12px;background:var(--s2);border-radius:var(--r);}
+.chat-bubble{max-width:85%;padding:10px 14px;border-radius:var(--r);font-size:13px;line-height:1.7;}
+.chat-bubble.ai{background:var(--s2);color:var(--ink);align-self:flex-start;border-radius:4px var(--r) var(--r) var(--r);}
+.chat-bubble.user{background:var(--acc);color:#fff;align-self:flex-end;border-radius:var(--r) 4px var(--r) var(--r);}
+.chat-bubble.thinking{background:var(--s2);color:var(--ink3);align-self:flex-start;font-style:italic;}
+.chat-input-row{display:flex;gap:8px;margin-top:8px;}
+.chat-input{flex:1;padding:10px 14px;border:1px solid var(--bdr);border-radius:24px;font-family:var(--sans);font-size:13px;background:var(--surface);color:var(--ink);}
+.chat-input:focus{outline:none;border-color:var(--acc);}
+.chat-send{width:42px;height:42px;border-radius:50%;background:var(--acc);border:none;color:#fff;font-size:18px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.chat-send:disabled{opacity:.5;}
+.chat-suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.chat-sug{padding:6px 12px;border-radius:20px;border:1px solid var(--bdr);background:var(--surface);font-size:11px;cursor:pointer;color:var(--ink2);transition:all .15s;-webkit-tap-highlight-color:transparent;}
+.chat-sug:hover{border-color:var(--acc);color:var(--acc);}
+/* カスタム確認ダイアログ */
+.confirm-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:10000;align-items:flex-end;justify-content:center;}
+.confirm-overlay.open{display:flex;}
+.confirm-box{background:var(--surface);border-radius:var(--r) var(--r) 0 0;padding:22px 20px 32px;width:100%;max-width:480px;}
+.confirm-msg{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:16px;text-align:center;}
+.confirm-btns{display:flex;gap:8px;}
+.confirm-btns button{flex:1;padding:13px;border-radius:var(--rs);border:none;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;}
+.confirm-ok{background:var(--red);color:#fff;}
+.confirm-cancel{background:var(--s2);color:var(--ink2);}
 /* iOS セーフエリア対応 */
 @supports(padding:env(safe-area-inset-bottom)){
   @media(max-width:768px){
@@ -365,6 +402,10 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
   <div id="streak-banner" style="display:none;background:var(--warn-l);border:1px solid rgba(184,134,11,.2);border-radius:var(--rs);padding:9px 13px;margin-bottom:12px;font-size:12px;color:var(--warn);display:flex;align-items:center;gap:8px">
     <span style="font-size:18px">🔥</span><span id="streak-text">—</span>
   </div>
+  <!-- レシートボタン（上部） -->
+  <button onclick="openReceiptScanner()" style="width:100%;padding:12px;border-radius:var(--r);border:1.5px solid var(--acc);background:var(--acc-l);color:var(--acc);font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px;-webkit-tap-highlight-color:transparent"><span style="font-size:18px">📷</span> レシートを撮影して自動記録</button>
+  <!-- AIリアルタイム分析エリア -->
+  <div id="ai-live-area"></div>
   <div class="stat-row" id="hk-stats"></div>
   <div class="sec-hd">
     <div class="sec-t">今月の記録</div>
@@ -372,7 +413,30 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
   </div>
   <div id="hk-month-summary"></div>
   <div id="hk-list"></div>
-  <button class="add-btn" onclick="openHkModal()">＋ 支出・収入を記録</button>
+  <button class="add-btn" onclick="openHkModal()">＋ 手動で記録</button>
+  <input type="file" id="receipt-input" accept="image/*" capture="environment" style="display:none" onchange="handleReceiptImage(event)">
+  <!-- レシート解析モーダル -->
+  <div class="overlay" id="receipt-modal">
+    <div class="modal">
+      <div class="modal-t">📷 レシートを読み取る</div>
+      <div id="receipt-preview" style="margin-bottom:12px;display:none">
+        <img id="receipt-img" style="width:100%;border-radius:var(--rs);max-height:200px;object-fit:cover;">
+      </div>
+      <div id="receipt-status" style="font-size:13px;color:var(--ink2);margin-bottom:12px;line-height:1.7;min-height:20px"></div>
+      <div id="receipt-results" style="display:none">
+        <div style="font-size:12px;font-weight:500;color:var(--ink2);margin-bottom:8px">読み取り結果（タップして編集できます）</div>
+        <div id="receipt-items-list" style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;max-height:300px;overflow-y:auto;"></div>
+        <div style="display:flex;gap:7px">
+          <button class="btn btn-s" onclick="closeReceiptModal()" style="flex:0.4">キャンセル</button>
+          <button class="btn btn-p" onclick="confirmReceiptItems()" id="receipt-confirm-btn">すべて記録する</button>
+        </div>
+      </div>
+      <div id="receipt-upload-area" style="text-align:center;padding:12px 0">
+        <button class="btn btn-p" onclick="document.getElementById('receipt-input').click()" style="width:100%;margin-bottom:8px">📸 カメラで撮影 / 画像を選ぶ</button>
+        <div style="font-size:11px;color:var(--ink3)">レシートや領収書の写真を選択してください</div>
+      </div>
+    </div>
+  </div>
   <!-- FABボタン：ページ内右下に追加ボタン -->
   <div id="kakeibo-fab" style="display:none;position:fixed;right:18px;bottom:72px;z-index:98;">
     <button onclick="openHkModal()" style="width:52px;height:52px;border-radius:50%;background:var(--acc);color:#fff;border:none;font-size:24px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;">＋</button>
@@ -399,6 +463,17 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
 <div class="page" id="page-audit">
   <button class="ai-run-btn" id="audit-btn" onclick="runAudit()"><span>✦</span> AIで総合診断する</button>
   <div id="audit-content"></div>
+  <!-- カウンセリングチャット（診断後に表示） -->
+  <div id="counseling-wrap" style="display:none;margin-top:20px">
+    <div class="sec-hd"><div class="sec-t">💬 カウンセリングチャット</div></div>
+    <div style="font-size:12px;color:var(--ink3);margin-bottom:10px">診断結果をもとに、具体的な改善策を相談できます</div>
+    <div class="chat-wrap" id="chat-messages"></div>
+    <div class="chat-suggestions" id="chat-suggestions"></div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chat-input" placeholder="質問や相談を入力..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendChat();}">
+      <button class="chat-send" id="chat-send-btn" onclick="sendChat()">↑</button>
+    </div>
+  </div>
 </div>
 
 <!-- 貯金 -->
@@ -421,6 +496,18 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
       <input class="sim-inp" id="sim-payday-custom" type="number" min="1" max="31" placeholder="日" oninput="updateSim()" style="width:60px;display:none;margin-left:6px">
       <span style="font-size:11px;color:var(--ink3)">日</span>
     </div>
+    <div style="margin-bottom:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px">
+        <div style="font-size:12px;color:var(--ink2);font-weight:500">🏦 銀行口座</div>
+        <button onclick="addBankAccount()" style="border:none;background:var(--acc-l);color:var(--acc);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:500;cursor:pointer;-webkit-tap-highlight-color:transparent">＋ 追加</button>
+      </div>
+      <div id="bank-accounts-list"></div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 4px;border-top:1px solid var(--bdr);margin-top:2px">
+        <span style="color:var(--ink2)">口座残高合計</span>
+        <span style="font-weight:500" id="bank-total-display">¥0</span>
+      </div>
+      <input type="hidden" id="sim-bank" value="0">
+    </div>
     <div class="sim-row"><div class="sim-lbl">家賃</div><input class="sim-inp" type="number" id="sim-rent" value="65000" oninput="updateSim()"><span style="font-size:11px;color:var(--ink3)">円</span></div>
     <div class="sim-row"><div class="sim-lbl">食費・生活費</div><input class="sim-inp" type="number" id="sim-living" value="50000" oninput="updateSim()"><span style="font-size:11px;color:var(--ink3)">円</span></div>
     <div class="sim-res" id="sim-result"></div>
@@ -429,7 +516,45 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
 
 <!-- チャレンジ -->
 <div class="page" id="page-challenge">
-  <div class="sec-hd"><div class="sec-t">節約チャレンジ</div><button class="btn btn-p" onclick="openChallengeModal()" style="padding:6px 12px;font-size:12px;border-radius:var(--rs)">＋ 追加</button></div>
+
+  <!-- ご褒美ポイントシステム -->
+  <div style="background:linear-gradient(135deg,#2D5A3D,#1a3d28);color:#fff;border-radius:var(--r);padding:16px 18px;margin-bottom:16px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+      <div>
+        <div style="font-size:11px;opacity:.8;margin-bottom:3px">今月の獲得ポイント</div>
+        <div style="font-family:var(--serif);font-size:36px;" id="reward-points-display">0 pt</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:11px;opacity:.8;margin-bottom:3px">ご褒美に使える金額</div>
+        <div style="font-family:var(--serif);font-size:24px;" id="reward-money-display">¥0</div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,.15);border-radius:var(--rs);height:6px;margin-bottom:10px;overflow:hidden">
+      <div id="reward-progress-bar" style="height:100%;background:#fff;border-radius:var(--rs);transition:width .5s;width:0%"></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button onclick="openRewardLogModal()" style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:20px;padding:6px 14px;font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer">＋ 行動を記録</button>
+      <button onclick="openRewardSettingsModal()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:20px;padding:6px 14px;font-family:var(--sans);font-size:12px;cursor:pointer">⚙️ ポイント設定</button>
+    </div>
+  </div>
+
+  <!-- AIバランスアドバイス -->
+  <div id="reward-ai-advice" style="margin-bottom:14px"></div>
+
+  <!-- 今月の行動ログ -->
+  <div class="sec-hd">
+    <div class="sec-t">今月の行動ログ</div>
+    <button onclick="runRewardAIAdvice()" id="reward-ai-btn" style="border:none;background:var(--acc-l);color:var(--acc);border-radius:20px;padding:5px 12px;font-size:11px;font-weight:500;cursor:pointer">✦ AIアドバイス</button>
+  </div>
+  <div id="reward-log-list" style="margin-bottom:16px"></div>
+
+  <div class="sec-hd">
+    <div class="sec-t">節約チャレンジ</div>
+    <div style="display:flex;gap:6px">
+      <button onclick="runAIChallengeSetup()" style="border:none;background:var(--acc-l);color:var(--acc);border-radius:20px;padding:5px 10px;font-size:11px;font-weight:500;cursor:pointer">✦ AIで生成</button>
+      <button class="btn btn-p" onclick="openChallengeModal()" style="padding:6px 12px;font-size:12px;border-radius:var(--rs)">＋ 追加</button>
+    </div>
+  </div>
   <div id="challenge-list"></div>
   <div style="margin-top:20px"><div class="sec-hd"><div class="sec-t">🔮 来月の支出予測</div></div>
   <button class="ai-run-btn" id="forecast-btn" onclick="runMonthlyForecast()" style="margin-bottom:4px">🔮 来月の支出を予測</button>
@@ -448,6 +573,35 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
 
 <!-- 共有 -->
 <div class="page" id="page-sync">
+
+  <!-- Notionスクショ読み込み -->
+  <button onclick="openNotionScanner()" style="width:100%;padding:12px;border-radius:var(--r);border:1.5px solid var(--acc);background:var(--acc-l);color:var(--acc);font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px;-webkit-tap-highlight-color:transparent"><span style="font-size:18px">📓</span> Notionのスクショを読み込む</button>
+  <input type="file" id="notion-scan-input" accept="image/*" style="display:none" onchange="handleNotionScanImage(event)">
+
+  <!-- Notionスキャンモーダル -->
+  <div class="overlay" id="notion-scan-modal">
+    <div class="modal">
+      <div class="modal-t">📓 Notionスクショを読み込む</div>
+      <div id="notion-scan-preview" style="margin-bottom:12px;display:none">
+        <img id="notion-scan-img" style="width:100%;border-radius:var(--rs);max-height:200px;object-fit:cover;">
+      </div>
+      <div id="notion-scan-status" style="font-size:13px;color:var(--ink2);margin-bottom:12px;line-height:1.7;min-height:20px"></div>
+      <div id="notion-scan-results" style="display:none">
+        <div style="font-size:12px;font-weight:500;color:var(--ink2);margin-bottom:8px">読み取り結果（タップして編集できます）</div>
+        <!-- タブ切り替え -->
+        <div style="display:flex;gap:6px;margin-bottom:10px" id="notion-scan-tabs"></div>
+        <div id="notion-scan-items-list" style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;max-height:280px;overflow-y:auto;"></div>
+        <div style="display:flex;gap:7px">
+          <button class="btn btn-s" onclick="closeNotionScanModal()" style="flex:0.4">キャンセル</button>
+          <button class="btn btn-p" onclick="confirmNotionScanItems()" id="notion-scan-confirm-btn">記録する</button>
+        </div>
+      </div>
+      <div id="notion-scan-upload-area" style="text-align:center;padding:12px 0">
+        <button class="btn btn-p" onclick="document.getElementById('notion-scan-input').click()" style="width:100%;margin-bottom:8px">🖼️ スクショを選ぶ</button>
+        <div style="font-size:11px;color:var(--ink3);line-height:1.7">Notionの家計簿・行動ログ・日記など<br>どんな形式でもAIが自動判別して記録します</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Googleスプレッドシート連携 -->
   <div class="sync-panel" style="border:2px solid var(--acc);border-radius:var(--r);">
@@ -488,31 +642,74 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
   </div>
 
   <div class="sync-panel">
-    <div class="sec-t" style="margin-bottom:10px">デバイス間共有（共有ID）</div>
-    <p style="font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:10px">この共有IDを別のデバイスで入力するとデータが同期されます。スマホ・PCどちらでも同じデータを使えます。</p>
-    <div class="sync-id-box" id="sync-id-display">読み込み中...</div>
-    <div style="display:flex;gap:7px;margin-bottom:12px">
-      <button class="btn btn-p" onclick="copyId()" style="font-size:12px">IDをコピー</button>
-      <button class="btn btn-s" onclick="syncNow()" style="font-size:12px">今すぐ同期</button>
+    <div class="sec-t" style="margin-bottom:10px">📤 データのバックアップ・移行</div>
+    <p style="font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:12px">JSONファイルでデータを保存・別のデバイスに移行できます。</p>
+    <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px">
+      <button class="btn btn-p" onclick="exportData()" style="font-size:12px">📥 JSONエクスポート</button>
+      <button class="btn btn-s" onclick="showImportModal()" style="font-size:12px">📤 JSONインポート</button>
     </div>
-    <div class="sync-status" id="sync-status">—</div>
+    <div style="font-size:11px;color:var(--ink3);line-height:1.7">エクスポートしたファイルをLINEやメールで別のデバイスに送り、インポートするとデータを移行できます。</div>
+    <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
+    <div id="sync-status" style="display:none"></div>
+    <div id="sync-debug" style="display:none"></div>
+    <div id="sync-env-notice" style="display:none"></div>
+    <div id="sync-id-display" style="display:none"></div>
+    <input id="sync-input" style="display:none">
+    <div id="gist-setup-area" style="display:none"></div>
+    <div id="gist-active-area" style="display:none"></div>
+    <input id="gist-token-input" style="display:none">
+    <div style="background:var(--acc-l);border:1px solid rgba(45,90,61,.2);border-radius:var(--rs);padding:10px 12px;margin-top:10px;font-size:12px;color:var(--acc);line-height:1.7">
+      ✓ Firebase同期が有効です<br>
+      <span style="color:var(--ink2)">スマホ・PCで同じアプリを開くと自動でデータが同期されます</span>
+    </div>
   </div>
+  <!-- Notion連携（Make Webhook方式） -->
   <div class="sync-panel">
-    <div style="font-size:13px;font-weight:500;margin-bottom:10px">別のIDに接続する</div>
-    <div style="display:flex;gap:7px;">
-      <input class="fi" id="sync-input" placeholder="共有IDを貼り付け" style="flex:1;font-family:monospace;font-size:12px;">
-      <button class="btn btn-p" onclick="connectId()" style="white-space:nowrap;font-size:12px;padding:8px 12px">接続</button>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <span style="font-size:20px">📓</span>
+      <div class="sec-t">Notion連携（Make経由）</div>
     </div>
-    <p style="font-size:11px;color:var(--ink3);margin-top:7px;line-height:1.6">※ 接続すると現在のデータが上書きされます。</p>
+    <div id="notion-status-banner"></div>
+
+    <!-- 設定ガイド -->
+    <div style="background:var(--s2);border-radius:var(--rs);padding:10px 13px;margin-bottom:12px;font-size:11px;color:var(--ink2);line-height:2">
+      <strong style="color:var(--ink)">Make設定手順（約15分・無料）</strong><br>
+      ① <a href="https://make.com" target="_blank" style="color:var(--acc)">make.com</a> で無料登録<br>
+      ② 「Create a new scenario」→「Webhooks」→「Custom webhook」を追加<br>
+      ③ 表示されたWebhook URLをコピーして下に貼り付け<br>
+      ④ 次のモジュールに「Notion」→「Create a Database Item」を追加<br>
+      ⑤ Notionと接続 → DBを選択 → フィールドをマッピング<br>
+      ⑥ シナリオを保存・有効化
+    </div>
+
+    <div class="fg">
+      <label class="fl">家計簿用 Webhook URL <span style="color:var(--ink3);font-weight:400">（任意）</span></label>
+      <input class="fi" id="notion-kakeibo-webhook" placeholder="https://hook.make.com/xxxxx" style="font-size:11px;font-family:monospace">
+      <div style="font-size:10px;color:var(--ink3);margin-top:3px">送信データ: 日付・カテゴリ・金額・メモ・種別</div>
+    </div>
+    <div class="fg">
+      <label class="fl">行動ログ用 Webhook URL <span style="color:var(--ink3);font-weight:400">（任意）</span></label>
+      <input class="fi" id="notion-action-webhook" placeholder="https://hook.make.com/xxxxx" style="font-size:11px;font-family:monospace">
+      <div style="font-size:10px;color:var(--ink3);margin-top:3px">送信データ: 日付・行動名・量・単位・ポイント</div>
+    </div>
+
+    <!-- hidden: 旧APIフィールド（互換性のため残す） -->
+    <input id="notion-token" style="display:none">
+    <input id="notion-kakeibo-db" style="display:none">
+    <input id="notion-action-db" style="display:none">
+
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-p" onclick="saveNotionSettings()" style="font-size:12px">設定を保存</button>
+      <button class="btn btn-s" onclick="syncToNotion()" id="notion-sync-btn" style="font-size:12px">📓 今月分を一括送信</button>
+    </div>
+    <div id="notion-sync-status" style="font-size:12px;color:var(--ink3);margin-top:8px;line-height:1.7"></div>
   </div>
+
   <div class="sync-panel">
     <div style="font-size:13px;font-weight:500;margin-bottom:8px">データ操作</div>
     <div style="display:flex;gap:7px;flex-wrap:wrap;">
-      <button class="btn btn-s" onclick="exportData()" style="font-size:12px">JSONエクスポート</button>
-      <button class="btn btn-s" onclick="document.getElementById('import-file').click()" style="font-size:12px">JSONインポート</button>
       <button class="btn btn-d" onclick="clearAll()" style="font-size:12px">データをリセット</button>
     </div>
-    <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
   </div>
 </div>
 
@@ -523,9 +720,30 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
     <div class="fg"><label class="fl">サービス名</label><input class="fi" id="f-name" placeholder="例: Netflix"></div>
     <div class="fg"><label class="fl">カテゴリ</label>
       <select class="fi" id="f-cat">
-        <option value="video">🎬 動画</option><option value="music">🎵 音楽</option>
-        <option value="cloud">☁️ クラウド</option><option value="creative">🎨 クリエイティブ</option>
-        <option value="work">💼 仕事</option><option value="news">📰 ニュース</option><option value="other">📦 その他</option>
+        <optgroup label="🎭 エンタメ">
+          <option value="video">🎬 動画・映像</option>
+          <option value="music">🎵 音楽・ポッドキャスト</option>
+          <option value="game">🎮 ゲーム</option>
+          <option value="book">📚 電子書籍・マンガ</option>
+        </optgroup>
+        <optgroup label="💡 学習・仕事">
+          <option value="learning">🎓 学習・スキルアップ</option>
+          <option value="work">💼 仕事・ビジネス</option>
+          <option value="ai">🤖 AI・テクノロジー</option>
+          <option value="news">📰 ニュース・情報</option>
+          <option value="creative">🎨 クリエイティブ</option>
+        </optgroup>
+        <optgroup label="☁️ デジタル">
+          <option value="cloud">☁️ クラウド・ストレージ</option>
+          <option value="security">🔒 セキュリティ・VPN</option>
+          <option value="finance">💳 金融・家計</option>
+        </optgroup>
+        <optgroup label="🏃 ライフスタイル">
+          <option value="health">💊 健康・医療</option>
+          <option value="sport">🏋️ スポーツ・フィットネス</option>
+          <option value="food">🍱 フード・デリバリー</option>
+          <option value="other">📦 その他</option>
+        </optgroup>
       </select>
     </div>
     <div class="div"></div>
@@ -599,30 +817,38 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
           <optgroup label="🍽 食・日常">
             <option value="food">🛒 食費・日用品</option>
             <option value="eat-out">🍜 外食・カフェ</option>
+            <option value="alcohol">🍺 お酒・嗜好品</option>
           </optgroup>
-          <optgroup label="🚶 移動・住まい">
-            <option value="transport">🚃 交通費</option>
+          <optgroup label="🏠 住まい・通信">
+            <option value="rent">🏠 家賃・住居費</option>
             <option value="utility">💡 水道光熱費</option>
+            <option value="internet">📡 通信費（スマホ・ネット）</option>
           </optgroup>
           <optgroup label="💪 健康・美容">
             <option value="health">💊 医療・薬</option>
             <option value="fitness">🏋️ ジム・スポーツ</option>
+            <option value="beauty">💇 美容・ケア</option>
           </optgroup>
           <optgroup label="📚 学び・成長">
             <option value="education">📚 教育・勉強</option>
             <option value="loan">🎓 奨学金返済</option>
           </optgroup>
           <optgroup label="👗 ライフスタイル">
-            <option value="clothing">👗 衣服・美容</option>
+            <option value="clothing">👗 衣服・ファッション</option>
             <option value="leisure">🎮 娯楽・趣味</option>
+            <option value="sub">📱 サブスク</option>
             <option value="travel">✈️ 旅行・お出かけ</option>
             <option value="pet">🐾 ペット</option>
-            <option value="gift">🎁 交際・プレゼント</option>
+            <option value="gift">🎁 交際費・プレゼント</option>
+            <option value="appliance">🛋️ 家電・家具</option>
           </optgroup>
           <optgroup label="💴 お金まわり">
             <option value="tax">🏦 税金・保険料</option>
             <option value="other">📦 その他支出</option>
-            <option value="income">💰 収入</option>
+          </optgroup>
+          <optgroup label="💰 収入">
+            <option value="income">💰 収入（給料など）</option>
+            <option value="part-time">💼 アルバイト収入</option>
           </optgroup>
         </select>
       </div>
@@ -673,30 +899,57 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
   <div class="modal">
     <div class="modal-t" id="ch-modal-t">チャレンジを追加</div>
     <div class="fg"><label class="fl">チャレンジ名</label><input class="fi" id="chf-name" placeholder="例: 外食を月3回以内に"></div>
-    <div class="fr">
-      <div class="fg"><label class="fl">カテゴリ</label>
-        <select class="fi" id="chf-cat">
-          <option value="eat-out">🍜 外食・カフェ</option>
-          <option value="food">🛒 食費・日用品</option>
-          <option value="leisure">🎮 娯楽・趣味</option>
-          <option value="transport">🚃 交通費</option>
-          <option value="fitness">🏋️ ジム・スポーツ</option>
-          <option value="clothing">👗 衣服・美容</option>
-          <option value="travel">✈️ 旅行・お出かけ</option>
-          <option value="gift">🎁 交際・プレゼント</option>
-          <option value="education">📚 教育・勉強</option>
-          <option value="utility">💡 水道光熱費</option>
-          <option value="sub">📱 サブスク</option>
-          <option value="other">📦 その他</option>
-        </select>
+    <!-- 記録元の選択 -->
+    <div class="fg">
+      <label class="fl">記録元</label>
+      <div style="display:flex;gap:8px">
+        <button type="button" id="chf-src-kakeibo" onclick="setChallengeSrc('kakeibo')" style="flex:1;padding:8px;border-radius:var(--rs);border:1.5px solid var(--acc);background:var(--acc-l);color:var(--acc);font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer">💰 家計簿</button>
+        <button type="button" id="chf-src-action" onclick="setChallengeSrc('action')" style="flex:1;padding:8px;border-radius:var(--rs);border:1px solid var(--bdr);background:none;color:var(--ink2);font-family:var(--sans);font-size:12px;cursor:pointer">⭐ 行動ログ</button>
       </div>
-      <div class="fg"><label class="fl">目標タイプ</label>
-        <select class="fi" id="chf-type">
-          <option value="count">回数以内</option>
-          <option value="amount">金額以内（円）</option>
-        </select>
+      <div style="font-size:11px;color:var(--ink3);margin-top:5px" id="chf-src-hint">家計簿の支出記録から集計します</div>
+    </div>
+
+    <!-- 家計簿モード -->
+    <div id="chf-kakeibo-fields">
+      <div class="fr">
+        <div class="fg"><label class="fl">カテゴリ</label>
+          <select class="fi" id="chf-cat">
+            <option value="eat-out">🍜 外食・カフェ</option>
+            <option value="food">🛒 食費・日用品</option>
+            <option value="alcohol">🍺 お酒・嗜好品</option>
+            <option value="leisure">🎮 娯楽・趣味</option>
+            <option value="sub">📱 サブスク</option>
+            <option value="transport">🚃 交通費</option>
+            <option value="fitness">🏋️ ジム・スポーツ</option>
+            <option value="beauty">💇 美容・ケア</option>
+            <option value="clothing">👗 衣服・ファッション</option>
+            <option value="travel">✈️ 旅行・お出かけ</option>
+            <option value="gift">🎁 交際費・プレゼント</option>
+            <option value="education">📚 教育・勉強</option>
+            <option value="appliance">🛋️ 家電・家具</option>
+            <option value="utility">💡 水道光熱費</option>
+            <option value="other">📦 その他</option>
+          </select>
+        </div>
+        <div class="fg"><label class="fl">目標タイプ</label>
+          <select class="fi" id="chf-type">
+            <option value="count">回数以内</option>
+            <option value="amount">金額以内（円）</option>
+          </select>
+        </div>
       </div>
     </div>
+
+    <!-- 行動ログモード -->
+    <div id="chf-action-fields" style="display:none">
+      <div class="fg"><label class="fl">連携する行動</label>
+        <select class="fi" id="chf-action-id"></select>
+      </div>
+      <div style="font-size:11px;color:var(--acc);background:var(--acc-l);border-radius:var(--rs);padding:8px 11px;margin-bottom:8px">
+        「＋ 行動を記録」で記録した回数・時間が自動で進捗に反映されます
+      </div>
+    </div>
+
     <div class="fg"><label class="fl" id="chf-limit-lbl">目標回数</label><input class="fi" id="chf-limit" type="number" placeholder="3"></div>
     <div class="btn-row">
       <button class="btn btn-s" onclick="closeChallengeModal()">キャンセル</button>
@@ -706,14 +959,74 @@ nav{background:var(--surface);border-bottom:1px solid var(--bdr);padding:0 14px;
   </div>
 </div>
 
+<!-- ポイント行動記録モーダル -->
+<div class="overlay" id="reward-log-modal">
+  <div class="modal">
+    <div class="modal-t">行動を記録する</div>
+    <div class="fg"><label class="fl">行動の種類</label>
+      <select class="fi" id="rl-action-sel" onchange="updateRewardPreview()">
+      </select>
+    </div>
+    <div class="fg"><label class="fl" id="rl-amount-lbl">時間（時間）</label>
+      <input class="fi" id="rl-amount" type="number" min="0.5" step="0.5" value="1" oninput="updateRewardPreview()">
+    </div>
+    <div id="rl-preview" style="background:var(--acc-l);border-radius:var(--rs);padding:10px 12px;margin-bottom:4px;font-size:13px;color:var(--acc);text-align:center;font-weight:500"></div>
+    <div class="btn-row">
+      <button class="btn btn-s" onclick="closeRewardLogModal()">キャンセル</button>
+      <button class="btn btn-p" onclick="saveRewardLog()">記録する</button>
+    </div>
+  </div>
+</div>
+
+<!-- ポイント設定モーダル -->
+<div class="overlay" id="reward-settings-modal">
+  <div class="modal">
+    <div class="modal-t">⚙️ ポイント設定</div>
+    <!-- AI自動設定ボタン -->
+    <button onclick="runAIRewardSetup()" id="ai-reward-setup-btn" style="width:100%;padding:11px;border-radius:var(--r);border:none;background:var(--acc);color:#fff;font-family:var(--serif);font-size:14px;cursor:pointer;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:7px"><span>✦</span> AIに最適なポイント比率を決めてもらう</button>
+    <div id="ai-reward-setup-result" style="margin-bottom:10px"></div>
+    <div style="font-size:12px;color:var(--ink2);margin-bottom:12px;line-height:1.6">手動で調整することもできます。</div>
+    <div id="reward-actions-settings" style="margin-bottom:12px"></div>
+    <button onclick="addRewardAction()" style="width:100%;padding:9px;border:1.5px dashed var(--bdr2);border-radius:var(--rs);background:none;color:var(--ink3);font-family:var(--sans);font-size:13px;cursor:pointer;margin-bottom:12px">＋ 行動を追加</button>
+    <div class="fg">
+      <label class="fl">1ポイント = 何円のご褒美？</label>
+      <div style="display:flex;align-items:center;gap:8px">
+        <input class="fi" id="reward-rate-input" type="number" min="1" value="100" style="flex:1">
+        <span style="font-size:12px;color:var(--ink3)">円</span>
+      </div>
+      <div style="font-size:11px;color:var(--ink3);margin-top:4px">例: 100円に設定 → 10pt貯まると¥1,000使える</div>
+    </div>
+    <div class="fg">
+      <label class="fl">月の上限ご褒美金額（任意）</label>
+      <div style="display:flex;align-items:center;gap:8px">
+        <input class="fi" id="reward-cap-input" type="number" min="0" value="5000" style="flex:1">
+        <span style="font-size:12px;color:var(--ink3)">円</span>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-s" onclick="closeRewardSettingsModal()">キャンセル</button>
+      <button class="btn btn-p" onclick="saveRewardSettings()">保存する</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
+<div class="confirm-overlay" id="confirm-overlay">
+  <div class="confirm-box">
+    <div class="confirm-msg" id="confirm-msg">削除しますか？</div>
+    <div class="confirm-btns">
+      <button class="confirm-cancel" onclick="confirmResolve(false)">キャンセル</button>
+      <button class="confirm-ok" id="confirm-ok-btn" onclick="confirmResolve(true)">削除する</button>
+    </div>
+  </div>
+</div>
 
 <script>
 /* ===== 定数 ===== */
-const EMOJIS={video:'🎬',music:'🎵',cloud:'☁️',creative:'🎨',work:'💼',news:'📰',other:'📦'};
-const CATS={video:'動画',music:'音楽',cloud:'クラウド',creative:'クリエイティブ',work:'仕事',news:'ニュース',other:'その他'};
-const CAT_COL={video:'#F87171',music:'#4ADE80',cloud:'#60A5FA',creative:'#FBBF24',work:'#C084FC',news:'#2DD4BF',other:'#94A3B8'};
-const HK_CATS={food:{label:'食費・日用品',emoji:'🛒',color:'#F87171'},'eat-out':{label:'外食・カフェ',emoji:'🍜',color:'#FBBF24'},transport:{label:'交通費',emoji:'🚃',color:'#60A5FA'},utility:{label:'水道光熱費',emoji:'💡',color:'#34D399'},health:{label:'医療・薬',emoji:'💊',color:'#4ADE80'},fitness:{label:'ジム・スポーツ',emoji:'🏋️',color:'#F59E0B'},education:{label:'教育・勉強',emoji:'📚',color:'#818CF8'},loan:{label:'奨学金返済',emoji:'🎓',color:'#F43F5E'},clothing:{label:'衣服・美容',emoji:'👗',color:'#EC4899'},leisure:{label:'娯楽・趣味',emoji:'🎮',color:'#C084FC'},travel:{label:'旅行・お出かけ',emoji:'✈️',color:'#38BDF8'},pet:{label:'ペット',emoji:'🐾',color:'#FB923C'},gift:{label:'交際・プレゼント',emoji:'🎁',color:'#A78BFA'},tax:{label:'税金・保険料',emoji:'🏦',color:'#6B7280'},income:{label:'収入',emoji:'💰',color:'#2D5A3D'},other:{label:'その他',emoji:'📦',color:'#94A3B8'}};
+const EMOJIS={video:'🎬',music:'🎵',cloud:'☁️',creative:'🎨',work:'💼',news:'📰',other:'📦',game:'🎮',book:'📚',learning:'🎓',health:'💊',security:'🔒',ai:'🤖',finance:'💳',food:'🍱',sport:'🏋️'};
+const CATS={video:'動画・映像',music:'音楽・Pod',cloud:'クラウド',creative:'クリエイティブ',work:'仕事',news:'ニュース',other:'その他',game:'ゲーム',book:'電子書籍',learning:'学習',health:'健康・医療',security:'セキュリティ',ai:'AI・テクノロジー',finance:'金融・家計',food:'フード',sport:'スポーツ'};
+const CAT_COL={video:'#F87171',music:'#4ADE80',cloud:'#60A5FA',creative:'#FBBF24',work:'#C084FC',news:'#2DD4BF',other:'#94A3B8',game:'#FCD34D',book:'#6EE7B7',learning:'#A78BFA',health:'#34D399',security:'#94A3B8',ai:'#38BDF8',finance:'#FB923C',food:'#FCA5A5',sport:'#86EFAC'};
+const HK_CATS={food:{label:'食費・日用品',emoji:'🛒',color:'#F87171'},'eat-out':{label:'外食・カフェ',emoji:'🍜',color:'#FBBF24'},transport:{label:'交通費',emoji:'🚃',color:'#60A5FA'},rent:{label:'家賃・住居費',emoji:'🏠',color:'#6366F1'},utility:{label:'水道光熱費',emoji:'💡',color:'#34D399'},internet:{label:'通信費（スマホ・ネット）',emoji:'📡',color:'#0EA5E9'},health:{label:'医療・薬',emoji:'💊',color:'#4ADE80'},fitness:{label:'ジム・スポーツ',emoji:'🏋️',color:'#F59E0B'},beauty:{label:'美容・ケア',emoji:'💇',color:'#F472B6'},education:{label:'教育・勉強',emoji:'📚',color:'#818CF8'},loan:{label:'奨学金返済',emoji:'🎓',color:'#F43F5E'},clothing:{label:'衣服・ファッション',emoji:'👗',color:'#EC4899'},leisure:{label:'娯楽・趣味',emoji:'🎮',color:'#C084FC'},sub:{label:'サブスク',emoji:'📱',color:'#8B5CF6'},travel:{label:'旅行・お出かけ',emoji:'✈️',color:'#38BDF8'},pet:{label:'ペット',emoji:'🐾',color:'#FB923C'},gift:{label:'交際費・プレゼント',emoji:'🎁',color:'#A78BFA'},tax:{label:'税金・保険料',emoji:'🏦',color:'#6B7280'},alcohol:{label:'お酒・嗜好品',emoji:'🍺',color:'#D97706'},appliance:{label:'家電・家具',emoji:'🛋️',color:'#64748B'},income:{label:'収入',emoji:'💰',color:'#2D5A3D'},'part-time':{label:'アルバイト収入',emoji:'💼',color:'#059669'},other:{label:'その他',emoji:'📦',color:'#94A3B8'}};
 const FX={USD:150,EUR:163,GBP:190};
 const QUICK=[
   {name:'Netflix',cat:'video',price:1490,day:8,icon:'🎬'},{name:'Spotify',cat:'music',price:980,day:15,icon:'🎵'},
@@ -749,34 +1062,94 @@ function setSyncDot(state){
   const sp=document.getElementById('sync-status-pc');
   if(sp)sp.textContent={ok:'同期済み',busy:'同期中...',err:'同期エラー','':''}[state]||'';
 }
-async function cloudSave(){
-  if(!myShareId)return;
-  setSyncDot('busy');
-  const data=JSON.stringify({subs,kakeibo,goals,simIncome:document.getElementById('sim-income').value,simRent:document.getElementById('sim-rent').value,simLiving:document.getElementById('sim-living').value,simPayday:document.getElementById('sim-payday').value,simPaydayCustom:document.getElementById('sim-payday-custom').value});
-  try{
-    const r=await window.storage.set('subsave:'+myShareId,data,false);
-    setSyncDot(r?'ok':'err');
-    document.getElementById('sync-status').textContent='最終同期: '+new Date().toLocaleTimeString('ja-JP');
-  }catch(e){setSyncDot('err');}
+/* ===== クラウド同期（Firebase Realtime Database） ===== */
+// SubSave専用のFirebaseプロジェクト（無料・公開設定）
+// GitHub Gist API でクロスデバイス同期
+// ユーザーのGitHub Personal Access Token (gist scope)
+// Firebase Realtime Database（リアルタイム同期）
+const FB_URL = 'https://subsave-18003-default-rtdb.asia-southeast1.firebasedatabase.app';
+let GIST_TOKEN = '';
+let GIST_ID = '';
+const GITHUB_API = 'https://api.github.com';
+
+function getStoragePayload(){
+  return {
+    subs, kakeibo, goals,
+    simIncome: document.getElementById('sim-income').value,
+    simBank: document.getElementById('sim-bank').value,
+    simRent: document.getElementById('sim-rent').value,
+    simLiving: document.getElementById('sim-living').value,
+    simPayday: document.getElementById('sim-payday').value,
+    simPaydayCustom: document.getElementById('sim-payday-custom').value,
+    savedAt: new Date().toISOString()
+  };
 }
+
+function applyStoragePayload(d){
+  if(d.subs) subs=d.subs;
+  if(d.kakeibo) kakeibo=d.kakeibo;
+  if(d.goals) goals=d.goals;
+  if(d.simIncome) document.getElementById('sim-income').value=d.simIncome;
+  if(d.simBank) document.getElementById('sim-bank').value=d.simBank;
+  if(d.simRent) document.getElementById('sim-rent').value=d.simRent;
+  if(d.simLiving) document.getElementById('sim-living').value=d.simLiving;
+  if(d.simPayday){
+    document.getElementById('sim-payday').value=d.simPayday;
+    document.getElementById('sim-payday-custom').style.display=d.simPayday==='custom'?'':'none';
+  }
+  if(d.simPaydayCustom) document.getElementById('sim-payday-custom').value=d.simPaydayCustom;
+  recalcIds();
+}
+
+async function cloudSave(){
+  if(!myShareId) return;
+  setSyncDot('busy');
+  const dbg = document.getElementById('sync-debug');
+  try{
+    const payload = getStoragePayload();
+    const res = await fetch(FB_URL + '/users/' + myShareId + '.json', {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if(res.ok){
+      setSyncDot('ok');
+      const st = document.getElementById('sync-status');
+      if(st) st.textContent = '最終同期: ' + new Date().toLocaleTimeString('ja-JP');
+      if(dbg) dbg.textContent = '✓ Firebase保存成功';
+    } else {
+      setSyncDot('err');
+      if(dbg) dbg.textContent = '保存失敗: HTTP ' + res.status;
+    }
+  } catch(e){
+    setSyncDot('err');
+    if(dbg) dbg.textContent = '保存エラー: ' + e.message;
+  }
+}
+
 async function cloudLoad(id){
   setSyncDot('busy');
+  const dbg = document.getElementById('sync-debug');
+  if(!id) { setSyncDot('err'); return false; }
   try{
-    const r=await window.storage.get('subsave:'+id,false);
-    if(r&&r.value){
-      const d=JSON.parse(r.value);
-      subs=d.subs||subs; kakeibo=d.kakeibo||kakeibo; goals=d.goals||goals;
-      if(d.simIncome)document.getElementById('sim-income').value=d.simIncome;
-      if(d.simRent)document.getElementById('sim-rent').value=d.simRent;
-      if(d.simLiving)document.getElementById('sim-living').value=d.simLiving;
-      if(d.simPayday){document.getElementById('sim-payday').value=d.simPayday;document.getElementById('sim-payday-custom').style.display=d.simPayday==='custom'?'':'none';}
-      if(d.simPaydayCustom)document.getElementById('sim-payday-custom').value=d.simPaydayCustom;
-      recalcIds();
+    if(dbg) dbg.textContent = '読込中: ' + id;
+    const res = await fetch(FB_URL + '/users/' + id + '.json');
+    const d = await res.json();
+    if(dbg) dbg.textContent = '結果: ' + (d ? 'データあり' : 'null');
+    if(d && d.subs){
+      applyStoragePayload(d);
       setSyncDot('ok');
+      if(dbg) dbg.textContent = '✓ Firebase同期成功';
       return true;
     }
-    setSyncDot('err'); return false;
-  }catch(e){setSyncDot('err');return false;}
+    setSyncDot('err');
+    if(dbg) dbg.textContent = '✗ IDが見つかりません';
+    return false;
+  } catch(e){
+    setSyncDot('err');
+    if(dbg) dbg.textContent = 'エラー: ' + e.message;
+    return false;
+  }
 }
 function recalcIds(){
   nextId=Math.max(...subs.map(s=>s.id),9)+1;
@@ -784,7 +1157,7 @@ function recalcIds(){
   nextGId=Math.max(...goals.map(g=>g.id),9)+1;
 }
 function localSave(){
-  try{localStorage.setItem('subsave_v2',JSON.stringify({subs,kakeibo,goals,shareId:myShareId,simIncome:document.getElementById('sim-income').value,simRent:document.getElementById('sim-rent').value,simLiving:document.getElementById('sim-living').value,simPayday:document.getElementById('sim-payday').value,simPaydayCustom:document.getElementById('sim-payday-custom').value}));}catch(e){}
+  try{localStorage.setItem('subsave_v2',JSON.stringify({subs,kakeibo,goals,shareId:myShareId,simIncome:document.getElementById('sim-income').value,simBank:document.getElementById('sim-bank').value,simRent:document.getElementById('sim-rent').value,simLiving:document.getElementById('sim-living').value,simPayday:document.getElementById('sim-payday').value,simPaydayCustom:document.getElementById('sim-payday-custom').value}));}catch(e){}
 }
 function localLoad(){
   try{
@@ -792,10 +1165,17 @@ function localLoad(){
     if(d.subs)subs=d.subs; if(d.kakeibo)kakeibo=d.kakeibo; if(d.goals)goals=d.goals;
     if(d.shareId)myShareId=d.shareId;
     if(d.simIncome)document.getElementById('sim-income').value=d.simIncome;
+    if(d.simBank)document.getElementById('sim-bank').value=d.simBank;
     if(d.simRent)document.getElementById('sim-rent').value=d.simRent;
     if(d.simLiving)document.getElementById('sim-living').value=d.simLiving;
     if(d.simPayday){document.getElementById('sim-payday').value=d.simPayday;document.getElementById('sim-payday-custom').style.display=d.simPayday==='custom'?'':'none';}
     if(d.simPaydayCustom)document.getElementById('sim-payday-custom').value=d.simPaydayCustom;
+    // Gist同期設定を復元
+    try{
+      const g=JSON.parse(localStorage.getItem('subsave_gist')||'{}');
+      if(g.token) GIST_TOKEN=g.token;
+      if(g.id) GIST_ID=g.id;
+    }catch(e){}
   }catch(e){}
 }
 async function save(){
@@ -810,43 +1190,277 @@ async function initStorage(){
   }
   document.getElementById('sync-id-display').textContent=myShareId;
   recalcIds();
+
+  updateGistUI();
+  const notice = document.getElementById('sync-env-notice');
+  if(notice) notice.innerHTML = '<div style="background:var(--acc-l);border:1px solid rgba(45,90,61,.2);border-radius:var(--rs);padding:9px 12px;margin-bottom:10px;font-size:12px;color:var(--acc)">✓ クラウド同期対応 — スマホ・PCどちらからでも同期できます</div>';
+
   const ok=await cloudLoad(myShareId);
   if(!ok)await cloudSave();
   render();
+  loadRewardData();
+  renderRewardSummary();
+  loadNotionSettings();
+  // 起動時に今日分のサブスクを自動記録
+  autoRecordSubs();
 }
 async function syncNow(){
+  if(!GIST_TOKEN || !GIST_ID){ showToast('同期設定が未完了です'); return; }
   showToast('同期中...');
-  const ok=await cloudLoad(myShareId);
+  const ok=await cloudLoad(GIST_ID);
   if(ok){render();showToast('同期完了');}else{showToast('同期に失敗しました');}
 }
 async function connectId(){
   const id=document.getElementById('sync-input').value.trim().toUpperCase();
   if(!id||id.length<4){showToast('IDを入力してください');return;}
-  if(!confirm('現在のデータが上書きされます。続けますか？'))return;
+
+  if(!await customConfirm('現在のデータが上書きされます。続けますか？','接続する','confirm-ok'))return;
   const ok=await cloudLoad(id);
   if(ok){myShareId=id;localSave();document.getElementById('sync-id-display').textContent=id;render();showToast('接続しました！');}
   else showToast('IDが見つかりませんでした');
 }
+async function setupGistSync(){
+  const token = document.getElementById('gist-token-input').value.trim();
+  if(!token){ showToast('Tokenを入力してください'); return; }
+  setSyncDot('busy');
+  const dbg = document.getElementById('sync-debug');
+  if(dbg) dbg.textContent = 'Gistを作成中...';
+  try{
+    // 既存Gistを検索
+    const listRes = await fetch('https://api.github.com/gists', {
+      headers: {'Authorization': 'token ' + token}
+    });
+    if(!listRes.ok){ showToast('Tokenが無効です'); setSyncDot('err'); return; }
+    const gists = await listRes.json();
+    let gistId = '';
+    const existing = gists.find(g => g.files && g.files['subsave_data.json']);
+    if(existing){
+      gistId = existing.id;
+      if(dbg) dbg.textContent = '既存のGistを使用: ' + gistId;
+    } else {
+      // 新規作成
+      const createRes = await fetch('https://api.github.com/gists', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Authorization':'token '+token},
+        body: JSON.stringify({
+          description: 'SubSave データ同期',
+          public: false,
+          files: {'subsave_data.json': {content: JSON.stringify(getStoragePayload())}}
+        })
+      });
+      if(!createRes.ok){ showToast('Gist作成に失敗しました'); setSyncDot('err'); return; }
+      const created = await createRes.json();
+      gistId = created.id;
+      if(dbg) dbg.textContent = '新規Gist作成: ' + gistId;
+    }
+    GIST_TOKEN = token;
+    GIST_ID = gistId;
+    myShareId = gistId;
+    try{ localStorage.setItem('subsave_gist', JSON.stringify({token, id: gistId})); }catch(e){}
+    localSave();
+    updateGistUI();
+    await cloudSave();
+    showToast('同期設定が完了しました！');
+  }catch(e){
+    setSyncDot('err');
+    if(dbg) dbg.textContent = 'エラー: ' + e.message;
+    showToast('設定に失敗しました');
+  }
+}
+
+function updateGistUI(){
+  const hasGist = GIST_TOKEN && GIST_ID;
+  const setupArea = document.getElementById('gist-setup-area');
+  const activeArea = document.getElementById('gist-active-area');
+  if(setupArea) setupArea.style.display = hasGist ? 'none' : 'block';
+  if(activeArea) activeArea.style.display = hasGist ? 'block' : 'none';
+  const disp = document.getElementById('sync-id-display');
+  if(disp && GIST_ID) disp.textContent = GIST_ID;
+}
+
+async function copyGistUrl(){
+  const url = 'https://gist.github.com/' + GIST_ID;
+  try{ await navigator.clipboard.writeText(GIST_ID); showToast('Gist IDをコピーしました'); }
+  catch(e){ showToast('ID: ' + GIST_ID); }
+}
+
+function resetGistSync(){
+  if(!confirm('同期設定をリセットしますか？')) return;
+  GIST_TOKEN = ''; GIST_ID = '';
+  try{ localStorage.removeItem('subsave_gist'); }catch(e){}
+  updateGistUI();
+  showToast('同期設定をリセットしました');
+}
+
 async function copyId(){
-  try{await navigator.clipboard.writeText(myShareId);showToast('IDをコピーしました');}
-  catch(e){showToast('コピーできませんでした');}
+  // 方法1: Clipboard API
+  try{
+    await navigator.clipboard.writeText(myShareId);
+    showToast('IDをコピーしました');
+    return;
+  }catch(e){}
+
+  // 方法2: execCommand fallback
+  try{
+    const el = document.createElement('textarea');
+    el.value = myShareId;
+    el.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+    document.body.appendChild(el);
+    el.focus(); el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    showToast('IDをコピーしました');
+    return;
+  }catch(e){}
+
+  // 方法3: 手動コピー用にIDを大きく表示
+  const id = myShareId;
+  const box = document.getElementById('sync-id-display');
+  if(box){
+    box.style.cssText += 'font-size:22px;font-weight:bold;background:var(--acc-l);border:2px solid var(--acc);cursor:text;user-select:all;';
+    box.textContent = id;
+    showToast('IDを長押しして選択→コピーしてください');
+    // テキスト選択を試みる
+    try{
+      const range = document.createRange();
+      range.selectNode(box);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+    }catch(e){}
+  }
 }
 function exportData(){
-  const blob=new Blob([JSON.stringify({subs,kakeibo,goals},null,2)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='subsave_export.json';a.click();
+  const json = JSON.stringify({subs,kakeibo,goals},null,2);
+
+  // 方法1: ダウンロード（GitHub Pages等）
+  try{
+    const blob = new Blob([json],{type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'subsave_export.json';
+    document.body.appendChild(a); a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(url); document.body.removeChild(a); }, 100);
+    showToast('エクスポートしました');
+    return;
+  }catch(e){}
+
+  // 方法2: テキストとして表示してコピー（Claudeアプリ内）
+  showExportModal(json);
+}
+
+function showExportModal(json){
+  // 既存モーダルがあれば削除
+  const old = document.getElementById('export-modal-overlay');
+  if(old) old.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'export-modal-overlay';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:10000;display:flex;align-items:flex-end;justify-content:center;';
+  overlay.innerHTML = `
+    <div style="background:var(--surface);width:100%;max-width:680px;border-radius:var(--r) var(--r) 0 0;padding:20px 18px 32px;max-height:80vh;display:flex;flex-direction:column;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div style="font-family:var(--serif);font-size:16px;">エクスポートデータ</div>
+        <button onclick="document.getElementById('export-modal-overlay').remove()" style="border:none;background:none;font-size:20px;cursor:pointer;color:var(--ink2)">×</button>
+      </div>
+      <p style="font-size:12px;color:var(--ink2);margin-bottom:10px;line-height:1.6;">下のテキストを全選択してコピーし、メモアプリ等に保存してください。<br>インポート時はそのテキストを .json ファイルとして保存して読み込んでください。</p>
+      <button onclick="copyExportData()" style="background:var(--acc);color:#fff;border:none;border-radius:var(--rs);padding:10px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;margin-bottom:10px;">📋 全部コピーする</button>
+      <textarea id="export-textarea" style="flex:1;min-height:200px;padding:10px;border:1px solid var(--bdr);border-radius:var(--rs);font-family:monospace;font-size:11px;background:var(--s2);color:var(--ink);resize:none;" readonly>${json.replace(/</g,'&lt;')}</textarea>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click', e=>{ if(e.target===overlay) overlay.remove(); });
+}
+
+async function copyExportData(){
+  const ta = document.getElementById('export-textarea');
+  if(!ta) return;
+  try{
+    await navigator.clipboard.writeText(ta.value);
+    showToast('コピーしました！');
+  }catch(e){
+    ta.select(); document.execCommand('copy');
+    showToast('コピーしました！');
+  }
 }
 function importData(e){
   const f=e.target.files[0];if(!f)return;
   const r=new FileReader();
-  r.onload=ev=>{try{const d=JSON.parse(ev.target.result);if(d.subs)subs=d.subs;if(d.kakeibo)kakeibo=d.kakeibo;if(d.goals)goals=d.goals;recalcIds();save();render();showToast('インポート完了');}catch(ex){showToast('ファイルの形式が正しくありません');}};
+  r.onload=ev=>{try{applyImportData(ev.target.result);}catch(ex){showToast('ファイルの形式が正しくありません');}};
   r.readAsText(f);
 }
-function clearAll(){
-  if(!confirm('全データをリセットしますか？'))return;
+
+function applyImportData(text){
+  const d=JSON.parse(text);
+  if(!d.subs&&!d.kakeibo&&!d.goals) throw new Error('invalid');
+  if(d.subs)subs=d.subs;
+  if(d.kakeibo)kakeibo=d.kakeibo;
+  if(d.goals)goals=d.goals;
+  recalcIds();save();render();
+  showToast('インポート完了！');
+}
+
+function showImportModal(){
+  const old=document.getElementById('import-modal-overlay');
+  if(old)old.remove();
+  const overlay=document.createElement('div');
+  overlay.id='import-modal-overlay';
+  overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:10000;display:flex;align-items:flex-end;justify-content:center;';
+  overlay.innerHTML=`
+    <div style="background:var(--surface);width:100%;max-width:680px;border-radius:var(--r) var(--r) 0 0;padding:20px 18px 32px;max-height:85vh;display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-family:var(--serif);font-size:16px;">JSONインポート</div>
+        <button onclick="document.getElementById('import-modal-overlay').remove()" style="border:none;background:none;font-size:20px;cursor:pointer;color:var(--ink2)">×</button>
+      </div>
+      <p style="font-size:12px;color:var(--ink2);line-height:1.6;">エクスポートでコピーしたJSONテキストを下に貼り付けてください。</p>
+      <textarea id="import-textarea" placeholder='{"subs":[...],"kakeibo":[...],"goals":[...]}' style="flex:1;min-height:180px;padding:10px;border:1px solid var(--bdr);border-radius:var(--rs);font-family:monospace;font-size:11px;background:var(--s2);color:var(--ink);resize:none;"></textarea>
+      <div style="display:flex;gap:8px;">
+        <button onclick="document.getElementById('import-modal-overlay').remove()" style="flex:1;padding:12px;border-radius:var(--rs);border:none;background:var(--s2);color:var(--ink2);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;">キャンセル</button>
+        <button onclick="doImportFromText()" style="flex:1;padding:12px;border-radius:var(--rs);border:none;background:var(--acc);color:#fff;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;">インポートする</button>
+      </div>
+      <div style="border-top:1px solid var(--bdr);padding-top:10px;">
+        <div style="font-size:12px;color:var(--ink2);margin-bottom:6px;">またはファイルから読み込む</div>
+        <button onclick="document.getElementById('import-file').click()" style="width:100%;padding:10px;border-radius:var(--rs);border:1.5px dashed var(--bdr);background:none;color:var(--ink3);font-family:var(--sans);font-size:12px;cursor:pointer;">📁 JSONファイルを選択</button>
+        <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.remove();});
+}
+
+function doImportFromText(){
+  const text=document.getElementById('import-textarea').value.trim();
+  if(!text){showToast('テキストを貼り付けてください');return;}
+  try{
+    applyImportData(text);
+    document.getElementById('import-modal-overlay').remove();
+  }catch(e){
+    showToast('形式が正しくありません。エクスポートしたJSONをそのまま貼り付けてください。');
+  }
+}
+async function clearAll(){
+  if(!await customConfirm('全データをリセットします。元に戻せません。','リセットする','confirm-ok'))return;
   subs=[];kakeibo=[];goals=[];save();render();showToast('リセットしました');
 }
 
 /* ===== ユーティリティ ===== */
+/* ===== カスタム確認ダイアログ（confirm()の代替） ===== */
+let _confirmResolve = null;
+function customConfirm(msg, okLabel='削除する', okClass='confirm-ok'){
+  return new Promise(resolve => {
+    _confirmResolve = resolve;
+    document.getElementById('confirm-msg').textContent = msg;
+    const okBtn = document.getElementById('confirm-ok-btn');
+    okBtn.textContent = okLabel;
+    okBtn.className = okClass;
+    document.getElementById('confirm-overlay').classList.add('open');
+  });
+}
+function confirmResolve(result){
+  document.getElementById('confirm-overlay').classList.remove('open');
+  if(_confirmResolve){ _confirmResolve(result); _confirmResolve = null; }
+}
+
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
 function calcRemain(e){if(!e)return 0;const n=new Date(),[ey,em]=e.split('-').map(Number);return Math.max(0,(ey-n.getFullYear())*12+(em-(n.getMonth()+1))+1);}
 function toMonthly(s){
@@ -879,6 +1493,7 @@ function render(){
   renderCharts();
   renderGoals();
   updateSim();
+  renderBankAccounts();
   renderSummaryCard();
   renderChallenges();
 }
@@ -1035,13 +1650,59 @@ async function runAudit(){
   const hkSummary=Object.entries(hkEntries.reduce((a,k)=>{a[k.cat]=(a[k.cat]||0)+(k.type==='expense'?k.amount:0);return a;},{})).map(([c,v])=>`・${(HK_CATS[c]||HK_CATS.other).label}: ¥${v.toLocaleString()}`).join('\n')||'（記録なし）';
   const totalExp=hkEntries.filter(k=>k.type==='expense').reduce((a,k)=>a+k.amount,0);
   const totalInc=hkEntries.filter(k=>k.type==='income').reduce((a,k)=>a+k.amount,0);
-  const prompt=`あなたは家計・サブスク節約アドバイザーです。以下の情報をもとにJSON形式のみで回答してください。\n\n【サブスク（月額換算合計: ¥${totalMonthly().toLocaleString()}）】\n${subList}\n\n【今月の家計（${m.replace('-','年')}月）】\n支出合計: ¥${totalExp.toLocaleString()}\n収入合計: ¥${totalInc.toLocaleString()}\nカテゴリ別支出:\n${hkSummary}\n\n以下のJSON形式で回答してください:\n{\n  "subs": [\n    {"name":"名前","action":"replace"|"cancel"|"keep","monthly":月額,"alt":"代替名","altFree":true|false,"reason":"25字以内"}\n  ],\n  "kakeibo_insight": "家計の使いすぎ・節約アドバイスを100字以内で",\n  "saving_total": 節約できる合計月額数値\n}`;
+  const prompt=`あなたは20代男性社会人（一人暮らし・節約志向）の家計・サブスク専門アドバイザーです。以下の情報をもとにJSON形式のみで回答してください。
+
+【診断対象者のプロフィール】
+・20代男性・社会人・一人暮らし
+・目標: 節約して貯金を増やす（一人暮らし資金を貯めている）
+・健康にも気を使いたい（ジム・食事・睡眠など）
+・無駄な出費は削りたいが、健康・スキルアップへの投資は継続推奨
+
+【サブスク（月額換算合計: ¥${totalMonthly().toLocaleString()}）】
+${subList}
+
+【残高シミュレーション】
+現在の銀行残高: ¥${getSimData().bank.toLocaleString()}
+手取り月収: ¥${getSimData().income.toLocaleString()}（給料日: ${getSimData().payday}）
+家賃: ¥${getSimData().rent.toLocaleString()}
+食費・生活費（見込み）: ¥${getSimData().living.toLocaleString()}
+サブスク合計: ¥${getSimData().subTotal.toLocaleString()}
+貯金積立合計: ¥${getSimData().savingsTotal.toLocaleString()}
+家計簿実績（今月）: ¥${getSimData().actualTotal.toLocaleString()}
+給料日後の手元残高（試算）: ¥${getSimData().realBalance.toLocaleString()}
+貯金目標: ${getSimData().savingsGoals.map(g=>g.name+'月¥'+g.monthly.toLocaleString()).join('、')||'未設定'}
+
+【今月の家計（${m.replace('-','年')}月）】
+支出合計: ¥${totalExp.toLocaleString()}
+収入合計: ¥${totalInc.toLocaleString()}
+カテゴリ別支出:
+${hkSummary}
+
+【判断基準】
+・サブスク: 利用頻度が低い・無料代替がある場合はreplace/cancel推奨。ただし健康・学習・仕事系は継続推奨
+・外食: 月3万円超は要注意。コンビニ飯より自炊推奨だが完全禁止は不要
+・食費: 月3〜4万円が20代社会人の目安。タンパク質・野菜不足に注意
+・お酒: 週2回以内・月1万円以下が健康的な目安
+・ジム: 健康投資として継続推奨。ただし月1万円超は見直しを
+・通信費: スマホ+ネットで月1万円以内が目安
+・健康面: 食費・ジム・医療を削りすぎないようアドバイスに含める
+
+以下のJSON形式で回答してください:
+{
+  "subs": [
+    {"name":"名前","action":"replace"|"cancel"|"keep","monthly":月額,"alt":"代替名","altFree":true|false,"reason":"25字以内（健康・節約の観点を含める）"}
+  ],
+  "kakeibo_insight": "家計全体への節約＋健康アドバイスを120字以内で。20代男性社会人視点で具体的に",
+  "health_warning": "健康面で気になる点があれば30字以内で。なければnull",
+  "saving_total": 節約できる合計月額数値
+}`;
   try{
     const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1200,messages:[{role:'user',content:prompt}]})});
     const data=await res.json();
     const text=data.content.map(c=>c.text||'').join('');
     const result=JSON.parse(text.replace(/```json|```/g,'').trim());
     renderAuditResult(result);
+    initCounselingChat(result);
   }catch(e){content.innerHTML=`<div style="font-size:13px;color:var(--red);padding:13px;background:var(--red-l);border-radius:var(--r)">診断に失敗しました。もう一度お試しください。</div>`;}
   btn.disabled=false;btn.innerHTML='<span>⟳</span> 再診断する';
 }
@@ -1051,8 +1712,11 @@ function renderAuditResult(r){
   const good=(r.subs||[]).filter(s=>s.action==='keep');
   const saving=r.saving_total||0;
   let html='';
+  if(r.health_warning){
+    html+=`<div class="ai-insight" style="background:var(--warn-l);border:1px solid rgba(184,134,11,.2)">🏥 <strong>健康面のアドバイス</strong><br><span style="color:var(--warn)">${r.health_warning}</span></div>`;
+  }
   if(r.kakeibo_insight){
-    html+=`<div class="ai-insight">💡 <strong>家計アドバイス</strong><br>${r.kakeibo_insight}</div>`;
+    html+=`<div class="ai-insight">💡 <strong>家計アドバイス（20代社会人向け）</strong><br>${r.kakeibo_insight}</div>`;
   }
   if(saving>0){
     html+=`<div class="saving-banner"><div class="saving-lbl">節約できる月額（AI試算）</div><div class="saving-val">¥${saving.toLocaleString()}</div></div>`;
@@ -1124,10 +1788,92 @@ function saveGoal(){
   else goals.push({id:nextGId++,...obj});
   closeGoalModal();save();renderGoals();
 }
-function delGoal(){if(editGId&&confirm('削除しますか？')){goals=goals.filter(g=>g.id!==editGId);closeGoalModal();save();renderGoals();}}
+async function delGoal(){if(editGId&&await customConfirm('この目標を削除しますか？')){goals=goals.filter(g=>g.id!==editGId);closeGoalModal();save();renderGoals();}}
 document.getElementById('goal-modal').addEventListener('click',e=>{if(e.target===document.getElementById('goal-modal'))closeGoalModal();});
 
 /* ===== シミュ ===== */
+let bankAccounts = [{id:1, name:'メインバンク', balance:0}];
+let nextBankId = 2;
+
+function saveBankAccounts(){
+  try{ localStorage.setItem('subsave_banks', JSON.stringify({accounts:bankAccounts})); }catch(e){}
+}
+function loadBankAccounts(){
+  try{
+    const d = JSON.parse(localStorage.getItem('subsave_banks')||'{}');
+    if(d.accounts && d.accounts.length){ bankAccounts=d.accounts; nextBankId=Math.max(...bankAccounts.map(b=>b.id),1)+1; }
+  }catch(e){}
+}
+function renderBankAccounts(){
+  const list = document.getElementById('bank-accounts-list');
+  if(!list) return;
+  list.innerHTML = bankAccounts.map(b=>`
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+      <span style="font-size:14px">🏦</span>
+      <input value="${b.name}" placeholder="口座名（例: 楽天銀行）"
+        style="flex:1;padding:7px 9px;border:1px solid var(--bdr);border-radius:var(--rs);font-family:var(--sans);font-size:12px;background:var(--bg);color:var(--ink);min-width:0;"
+        oninput="updateBankName(${b.id},this.value)">
+      <input value="${b.balance||0}" type="number" placeholder="残高"
+        style="width:100px;padding:7px 9px;border:1px solid var(--bdr);border-radius:var(--rs);font-family:var(--sans);font-size:12px;background:var(--bg);color:var(--ink);"
+        oninput="updateBankBalance(${b.id},this.value)">
+      <span style="font-size:11px;color:var(--ink3);flex-shrink:0">円</span>
+      ${bankAccounts.length>1?`<button onclick="removeBankAccount(${b.id})" style="border:none;background:none;color:var(--red);cursor:pointer;font-size:18px;padding:0 2px;flex-shrink:0;line-height:1">×</button>`:''}
+    </div>
+  `).join('');
+  const total = bankAccounts.reduce((a,b)=>a+(b.balance||0),0);
+  const td = document.getElementById('bank-total-display');
+  if(td) td.textContent = '¥' + total.toLocaleString();
+  const hidden = document.getElementById('sim-bank');
+  if(hidden) hidden.value = total;
+  updateSim();
+}
+function addBankAccount(){
+  bankAccounts.push({id:nextBankId++, name:'', balance:0});
+  saveBankAccounts(); renderBankAccounts();
+}
+function removeBankAccount(id){
+  bankAccounts = bankAccounts.filter(b=>b.id!==id);
+  saveBankAccounts(); renderBankAccounts();
+}
+function updateBankName(id, val){
+  const b = bankAccounts.find(x=>x.id===id);
+  if(b){ b.name=val; saveBankAccounts(); }
+  // 再描画しない（入力中のフォーカスを維持）
+}
+function updateBankBalance(id, val){
+  const b = bankAccounts.find(x=>x.id===id);
+  if(!b) return;
+  b.balance = parseInt(val)||0;
+  saveBankAccounts();
+  // 合計表示と隠しフィールドだけ更新（再描画しない→フォーカスが外れない）
+  const total = bankAccounts.reduce((a,b)=>a+(b.balance||0),0);
+  const td = document.getElementById('bank-total-display');
+  if(td) td.textContent = '¥' + total.toLocaleString();
+  const hidden = document.getElementById('sim-bank');
+  if(hidden) hidden.value = total;
+  updateSim();
+}
+function getBankTotal(){
+  return bankAccounts.reduce((a,b)=>a+(b.balance||0),0);
+}
+
+function getSimData(){
+  const ic=parseInt(document.getElementById('sim-income').value)||0;
+  const bank=getBankTotal();
+  const re=parseInt(document.getElementById('sim-rent').value)||0;
+  const li=parseInt(document.getElementById('sim-living').value)||0;
+  const payday=getPayday();
+  const paydayLabel=payday===lastDayOfMonth()?'末日':payday+'日';
+  const sub=totalMonthly();
+  const savingsTotal=goals.reduce((a,g)=>a+(g.monthly||0),0);
+  const m=nowYM();
+  const actualTotal=kakeibo.filter(k=>ym(k.date)===m&&k.type==='expense'&&!k.autoRecorded).reduce((a,k)=>a+k.amount,0);
+  const remaining=ic-re-li-sub-savingsTotal-actualTotal;
+  // 銀行残高 + 給料日後の残高 = 実質的な手元資金
+  const realBalance=bank+remaining;
+  return {income:ic,bank,rent:re,living:li,payday:paydayLabel,subTotal:sub,savingsTotal,actualTotal,remaining,realBalance,
+    savingsGoals:goals.map(g=>({name:g.name,monthly:g.monthly,target:g.target,current:g.current}))};
+}
 function lastDayOfMonth(){
   const n=new Date();
   return new Date(n.getFullYear(),n.getMonth()+1,0).getDate();
@@ -1159,6 +1905,16 @@ function updateSim(){
   const today=new Date().getDate();
   const paydayLabel=payday===lastDayOfMonth()?'末日':payday+'日';
 
+  // 今月の家計簿実績（サブスク自動記録分を除く手動入力分）
+  const m=nowYM();
+  const hkActual=kakeibo.filter(k=>ym(k.date)===m&&k.type==='expense'&&!k.autoRecorded);
+  const actualTotal=hkActual.reduce((a,k)=>a+k.amount,0);
+
+  // カテゴリ別トップ3（表示用）
+  const byCat={};
+  hkActual.forEach(k=>{byCat[k.cat]=(byCat[k.cat]||0)+k.amount;});
+  const topCats=Object.entries(byCat).sort((a,b)=>b[1]-a[1]).slice(0,3);
+
   // 給料日までに引き落とされるサブスクと引落済みを分類
   const subsBefore=subs.filter(s=>{
     if(s.cycle==='yearly')return false;
@@ -1173,18 +1929,29 @@ function updateSim(){
   const subBeforeTotal=subsBefore.reduce((a,s)=>a+toMonthly(s),0);
   const subAfterTotal=subsAfter.reduce((a,s)=>a+toMonthly(s),0);
 
-  const rem=ic-re-li-subBeforeTotal;
+  // 貯金目標の月々積立合計
+  const savingsTotal=goals.reduce((a,g)=>a+(g.monthly||0),0);
+
+  // 銀行残高
+  const bank=getBankTotal();
+  // 残高計算：銀行残高 + 収入 - 家賃 - 食費見込み - 給料日までのサブスク - 家計簿実績 - 貯金積立
+  const rem=bank+ic-re-li-subBeforeTotal-actualTotal-savingsTotal;
 
   const subBeforeRows=subsBefore.map(s=>`<div class="sim-res-row" style="padding-left:12px"><span style="color:var(--ink3);font-size:12px">　${s.name}（${s.day}日）</span><span style="font-size:12px;color:var(--ink3)">−¥${toMonthly(s).toLocaleString()}</span></div>`).join('');
 
+  const actualRows=topCats.length?topCats.map(([c,v])=>`<div class="sim-res-row" style="padding-left:12px"><span style="color:var(--ink3);font-size:12px">　${(HK_CATS[c]||HK_CATS.other).emoji} ${(HK_CATS[c]||HK_CATS.other).label}</span><span style="font-size:12px;color:var(--ink3)">−¥${v.toLocaleString()}</span></div>`).join(''):'';
+
   document.getElementById('sim-result').innerHTML=`
+    ${bank>0?`<div class="sim-res-row"><span style="color:var(--ink2)">現在の銀行残高</span><span>¥${bank.toLocaleString()}</span></div>`:''}
     <div class="sim-res-row"><span style="color:var(--ink2)">手取り収入（${paydayLabel}）</span><span style="color:var(--acc)">+¥${ic.toLocaleString()}</span></div>
     <div class="sim-res-row"><span style="color:var(--ink2)">家賃</span><span>−¥${re.toLocaleString()}</span></div>
     <div class="sim-res-row"><span style="color:var(--ink2)">食費・生活費（見込み）</span><span>−¥${li.toLocaleString()}</span></div>
     <div class="sim-res-row"><span style="color:var(--ink2)">サブスク（給料日までに引落）</span><span>−¥${subBeforeTotal.toLocaleString()}</span></div>
     ${subBeforeRows}
     ${subsAfter.length?`<div class="sim-res-row"><span style="color:var(--ink3);font-size:12px">※ 今月引落済み</span><span style="color:var(--ink3);font-size:12px">−¥${subAfterTotal.toLocaleString()}</span></div>`:''}
-    <div class="sim-res-row tot"><span>給料日後の残高</span><span style="color:${rem>=0?'var(--acc)':'var(--red)'};font-family:var(--serif);font-size:15px">${rem>=0?'¥'+rem.toLocaleString():'−¥'+Math.abs(rem).toLocaleString()}</span></div>
+    ${actualTotal>0?`<div class="sim-res-row"><span style="color:var(--ink2)">家計簿実績（今月）</span><span>−¥${actualTotal.toLocaleString()}</span></div>${actualRows}`:''}
+    ${savingsTotal>0?`<div class="sim-res-row"><span style="color:var(--ink2)">貯金積立（${goals.length}件）</span><span style="color:var(--acc)">−¥${savingsTotal.toLocaleString()}</span></div>`:''}
+    <div class="sim-res-row tot" style="margin-top:6px"><span>給料日後の手元残高</span><span style="color:${rem>=0?'var(--acc)':'var(--red)'};font-family:var(--serif);font-size:15px">${rem>=0?'¥'+rem.toLocaleString():'−¥'+Math.abs(rem).toLocaleString()}</span></div>
     ${rem<0?`<div style="font-size:11px;color:var(--red);margin-top:6px;padding:7px 10px;background:var(--red-l);border-radius:8px">⚠️ 給料日時点で残高がマイナスになる可能性があります。</div>`:''}
     ${rem>=0&&rem<30000?`<div style="font-size:11px;color:var(--warn);margin-top:6px;padding:7px 10px;background:var(--warn-l);border-radius:8px">⚡ 残高が少なめです。急な出費に備えて節約を意識しましょう。</div>`:''}
   `;
@@ -1242,8 +2009,8 @@ function saveSub(){
   else subs.push({id:nextId++,...obj});
   closeSubModal();save();render();
 }
-function delSubFromModal(){if(editSubId!==null&&confirm('削除しますか？')){subs=subs.filter(s=>s.id!==editSubId);closeSubModal();save();render();}}
-function delSub(id){if(confirm('削除しますか？')){subs=subs.filter(s=>s.id!==id);save();render();}}
+async function delSubFromModal(){if(editSubId!==null&&await customConfirm('このサブスクを削除しますか？')){subs=subs.filter(s=>s.id!==editSubId);closeSubModal();save();render();}}
+async function delSub(id){if(await customConfirm('このサブスクを削除しますか？')){subs=subs.filter(s=>s.id!==id);save();render();}}
 
 /* ===== 家計簿モーダル ===== */
 function updateHkType(){
@@ -1277,17 +2044,22 @@ async function saveHk(){
   const obj={type,cat,memo,amount,date};
   if(editHkId!==null){const i=kakeibo.findIndex(x=>x.id===editHkId);if(i>=0)kakeibo[i]={id:editHkId,...obj};}
   else kakeibo.push({id:nextHkId++,...obj});
-  closeHkModal();save();renderKakeibo();
-  if(type==='expense')aiQuickComment(cat,amount,memo);
+  closeHkModal();save();renderKakeibo();updateSim();
+  if(type==='expense'){aiQuickComment(cat,amount,memo);scheduleAiLive();}
+  autoSyncToNotion('kakeibo');
 }
-function delHkFromModal(){if(editHkId!==null&&confirm('削除しますか？')){kakeibo=kakeibo.filter(k=>k.id!==editHkId);closeHkModal();save();renderKakeibo();}}
-function delHk(id){if(confirm('削除しますか？')){kakeibo=kakeibo.filter(k=>k.id!==id);save();renderKakeibo();}}
+async function delHkFromModal(){if(editHkId!==null&&await customConfirm('この記録を削除しますか？')){kakeibo=kakeibo.filter(k=>k.id!==editHkId);closeHkModal();save();renderKakeibo();}}
+async function delHk(id){if(await customConfirm('この記録を削除しますか？')){kakeibo=kakeibo.filter(k=>k.id!==id);save();renderKakeibo();updateSim();}}
 
 /* ===== AI即時コメント ===== */
 async function aiQuickComment(cat,amount,memo){
   const m=nowYM();const catTotal=kakeibo.filter(k=>ym(k.date)===m&&k.cat===cat&&k.type==='expense').reduce((a,k)=>a+k.amount,0);
   const catLabel=(HK_CATS[cat]||HK_CATS.other).label;
-  const prompt=`一人暮らしの家計アドバイザーとして、以下の支出に対して励ましや節約ヒントを1文（30字以内）で返してください。\n支出: ${memo||catLabel} ¥${amount.toLocaleString()}\nカテゴリ: ${catLabel}\n今月のこのカテゴリ累計: ¥${catTotal.toLocaleString()}\n※ 短く明るいトーンで。褒めるかアドバイスするか状況に応じて。`;
+  const prompt=`20代男性社会人（一人暮らし・節約志向）の家計アドバイザーとして、以下の支出に対してコメントを1文（30字以内）で返してください。
+支出: ${memo||catLabel} ¥${amount.toLocaleString()}
+カテゴリ: ${catLabel}
+今月のこのカテゴリ累計: ¥${catTotal.toLocaleString()}
+※ 節約・健康の両面から明るいトーンで。食費・健康系は削りすぎ注意。お酒・外食が多い場合は軽く指摘。`;
   try{
     const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:100,messages:[{role:'user',content:prompt}]})});
     const data=await res.json();
@@ -1317,7 +2089,7 @@ function parseCsvLine(line){
   return result;
 }
 
-const CAT_MAP={'食費':'food','日用品':'food','食費・日用品':'food','food':'food','外食':'eat-out','カフェ':'eat-out','外食・カフェ':'eat-out','eat-out':'eat-out','交通費':'transport','電車':'transport','バス':'transport','transport':'transport','水道':'utility','電気':'utility','ガス':'utility','光熱費':'utility','水道光熱費':'utility','utility':'utility','医療':'health','薬':'health','病院':'health','health':'health','ジム':'fitness','スポーツ':'fitness','フィットネス':'fitness','fitness':'fitness','教育':'education','勉強':'education','参考書':'education','education':'education','奨学金':'loan','loan':'loan','衣服':'clothing','服':'clothing','美容':'clothing','clothing':'clothing','娯楽':'leisure','趣味':'leisure','ゲーム':'leisure','leisure':'leisure','旅行':'travel','お出かけ':'travel','travel':'travel','ペット':'pet','pet':'pet','交際':'gift','プレゼント':'gift','gift':'gift','税金':'tax','保険':'tax','tax':'tax','収入':'income','給料':'income','income':'income','その他':'other','other':'other'};
+const CAT_MAP={'食費':'food','日用品':'food','食費・日用品':'food','food':'food','外食':'eat-out','カフェ':'eat-out','外食・カフェ':'eat-out','eat-out':'eat-out','交通費':'transport','電車':'transport','バス':'transport','transport':'transport','水道':'utility','電気':'utility','ガス':'utility','光熱費':'utility','水道光熱費':'utility','utility':'utility','医療':'health','薬':'health','病院':'health','health':'health','ジム':'fitness','スポーツ':'fitness','フィットネス':'fitness','fitness':'fitness','教育':'education','勉強':'education','参考書':'education','education':'education','奨学金':'loan','loan':'loan','衣服':'clothing','服':'clothing','美容':'clothing','clothing':'clothing','娯楽':'leisure','趣味':'leisure','ゲーム':'leisure','leisure':'leisure','旅行':'travel','お出かけ':'travel','travel':'travel','ペット':'pet','pet':'pet','交際':'gift','プレゼント':'gift','gift':'gift','税金':'tax','保険':'tax','tax':'tax','収入':'income','給料':'income','income':'income','アルバイト':'part-time','バイト':'part-time','part-time':'part-time','家賃':'rent','住居費':'rent','rent':'rent','通信費':'internet','スマホ':'internet','ネット':'internet','internet':'internet','美容':'beauty','ケア':'beauty','beauty':'beauty','お酒':'alcohol','飲み':'alcohol','alcohol':'alcohol','家電':'appliance','家具':'appliance','インテリア':'appliance','appliance':'appliance','サブスク':'sub','sub':'sub','その他':'other','other':'other'};
 
 async function importFromSheet(){
   const url=document.getElementById('sheet-url').value.trim();
@@ -1369,6 +2141,8 @@ function showPage(name,btn){
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('page-'+name).classList.add('active');btn.classList.add('active');
   if(name==='chart')renderCharts();
+  if(name==='kakeibo')scheduleAiLive();
+  if(name==='savings')renderBankAccounts();
   // FABボタン制御
   const fab=document.getElementById('kakeibo-fab');
   if(fab)fab.style.display=name==='kakeibo'?'block':'none';
@@ -1424,7 +2198,11 @@ function renderSummaryCard(){
   const rent=parseInt(document.getElementById('sim-rent').value)||0;
   const living=parseInt(document.getElementById('sim-living').value)||0;
   const sub=totalMonthly();
-  const remaining=income-rent-living-sub;
+  const bank=getBankTotal();
+  const savingsTotal=goals.reduce((a,g)=>a+(g.monthly||0),0);
+  const m=nowYM();
+  const actualTotal=kakeibo.filter(k=>ym(k.date)===m&&k.type==='expense'&&!k.autoRecorded).reduce((a,k)=>a+k.amount,0);
+  const remaining=bank+income-rent-living-sub-savingsTotal-actualTotal;
   const card=document.getElementById('home-summary-card');
   const remEl=document.getElementById('summary-remaining');
   const nextEl=document.getElementById('summary-next');
@@ -1450,13 +2228,19 @@ async function runMonthlyForecast(){
     return `${ym2}: ¥${total.toLocaleString()}`;
   }).join(', ')||'（データなし）';
   const catBreakdown=Object.entries(kakeibo.filter(k=>ym(k.date)===last3[0]&&k.type==='expense').reduce((a,k)=>{a[k.cat]=(a[k.cat]||0)+k.amount;return a;},{})).map(([c,v])=>`${(HK_CATS[c]||HK_CATS.other).label}:¥${v.toLocaleString()}`).join(', ')||'（データなし）';
-  const prompt=`家計アドバイザーとして来月の支出を予測してください。
+  const prompt=`20代男性社会人（一人暮らし・節約志向）の家計アドバイザーとして来月の支出を予測してください。
 過去3ヶ月の支出: ${histSummary}
 先月のカテゴリ別: ${catBreakdown}
 サブスク月額: ¥${totalMonthly().toLocaleString()}
 
+【予測の考慮事項】
+・20代社会人の平均的な支出バランスを参考に
+・食費は自炊ベースで3〜4万円が目安
+・外食・お酒が増えがちな月末・週末を考慮
+・健康費（ジム・医療）は削減推奨しない
+
 来月の予測をJSON形式のみで返してください:
-{"total":予測総額数値,"categories":[{"cat":"カテゴリ名","amount":金額,"note":"10字以内のコメント"}],"advice":"全体への節約アドバイス30字以内"}`;
+{"total":予測総額数値,"categories":[{"cat":"カテゴリ名","amount":金額,"note":"10字以内のコメント（節約か健康かの観点で）"}],"advice":"節約＋健康を両立するアドバイス40字以内"}`;
   try{
     const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:600,messages:[{role:'user',content:prompt}]})});
     const data=await res.json();
@@ -1499,12 +2283,14 @@ function updateInvSim(){
 
 /* ===== 固定費チェックリスト ===== */
 const FIXED_ITEMS=[
-  {id:'mobile',label:'スマホ料金',hint:'格安SIMで月2,000〜3,000円台も可能'},
-  {id:'insurance',label:'生命・医療保険',hint:'独身・健康な20代は最小限でOK'},
-  {id:'subscription',label:'使っていないサブスク',hint:'AI診断タブで確認できます'},
-  {id:'electricity',label:'電気・ガス会社',hint:'新電力への乗り換えで年数千円節約も'},
-  {id:'net',label:'インターネット回線',hint:'光回線の乗り換えキャッシュバック活用'},
-  {id:'bank',label:'銀行の振込・ATM手数料',hint:'ネット銀行は手数料無料が多い'},
+  {id:'mobile',label:'スマホ料金',hint:'格安SIM（楽天/mineo）で月1,500〜3,000円が目安'},
+  {id:'insurance',label:'生命・医療保険',hint:'20代健康な男性は最小限でOK。会社の団体保険を活用'},
+  {id:'subscription',label:'使っていないサブスク',hint:'AI診断タブで利用頻度を確認して整理しよう'},
+  {id:'electricity',label:'電気・ガス会社',hint:'電力比較サイトで乗り換えると年3,000〜10,000円節約'},
+  {id:'net',label:'インターネット回線',hint:'スマホのセット割や新規キャッシュバックを活用'},
+  {id:'bank',label:'銀行の振込・ATM手数料',hint:'楽天銀行・SBI銀行は条件付きで手数料ゼロ'},
+  {id:'gym',label:'ジム・フィットネス費',hint:'健康投資として継続推奨。月5,000円以内が目安'},
+  {id:'food_delivery',label:'フードデリバリー',hint:'月1万円超は要注意。自炊との組み合わせで節約'},
 ];
 let fixedChecked={};
 function renderFixedList(aiAdvice=null){
@@ -1528,12 +2314,17 @@ async function runFixedCheck(){
   const btn=document.getElementById('fixed-btn');
   btn.disabled=true;btn.textContent='診断中…';
   const subList=subs.map(s=>s.name).join(', ');
-  const prompt=`一人暮らしの固定費見直しアドバイザーです。
+  const prompt=`20代男性社会人（一人暮らし・節約志向）の固定費見直しアドバイザーです。
 登録サブスク: ${subList}
 月額合計: ¥${totalMonthly().toLocaleString()}
 
-以下の固定費項目それぞれに対して、この人向けの具体的なアドバイスを20字以内で。JSON形式のみ:
-{"mobile":"","insurance":"","subscription":"","electricity":"","net":"","bank":""}`;
+【この人の特徴】
+・20代男性・社会人・節約して貯金したい
+・健康にも気を使っている
+・スキルアップへの投資は前向き
+
+以下の固定費項目それぞれについて、20代男性社会人向けの具体的な節約アドバイスを20字以内で。JSON形式のみ:
+{"mobile":"格安SIM活用の具体提案","insurance":"20代に必要な保険の考え方","subscription":"サブスク整理の提案","electricity":"電気代節約の具体策","net":"通信費削減策","bank":"手数料ゼロ化の方法"}`;
   try{
     const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:400,messages:[{role:'user',content:prompt}]})});
     const data=await res.json();
@@ -1600,23 +2391,73 @@ function openChallengeModal(id=null){
   editChId=id;
   document.getElementById('ch-modal-t').textContent=id?'チャレンジを編集':'チャレンジを追加';
   document.getElementById('ch-del-btn').style.display=id?'block':'none';
-  if(id){const ch=challenges.find(x=>x.id===id);if(!ch)return;document.getElementById('chf-name').value=ch.name;document.getElementById('chf-cat').value=ch.cat;document.getElementById('chf-type').value=ch.type;document.getElementById('chf-limit').value=ch.limit;updateChLimitLabel();}
-  else{document.getElementById('chf-name').value='';document.getElementById('chf-cat').value='eat-out';document.getElementById('chf-type').value='count';document.getElementById('chf-limit').value='';updateChLimitLabel();}
+  if(id){
+    const ch=challenges.find(x=>x.id===id);if(!ch)return;
+    document.getElementById('chf-name').value=ch.name;
+    document.getElementById('chf-limit').value=ch.limit;
+    if(ch.src==='action'){
+      setChallengeSrc('action');
+      setTimeout(()=>{const sel=document.getElementById('chf-action-id');if(sel&&ch.actionId)sel.value=ch.actionId;},50);
+    }else{
+      setChallengeSrc('kakeibo');
+      document.getElementById('chf-cat').value=ch.cat||'eat-out';
+      document.getElementById('chf-type').value=ch.type||'count';
+      updateChLimitLabel();
+    }
+    document.getElementById('ch-del-btn').style.display='block';
+  }
+  else{document.getElementById('chf-name').value='';document.getElementById('chf-limit').value='';setChallengeSrc('kakeibo');updateChLimitLabel();}
   document.getElementById('challenge-modal').classList.add('open');
 }
 function closeChallengeModal(){document.getElementById('challenge-modal').classList.remove('open');}
 document.getElementById('challenge-modal').addEventListener('click',e=>{if(e.target===document.getElementById('challenge-modal'))closeChallengeModal();});
 function updateChLimitLabel(){const t=document.getElementById('chf-type').value;document.getElementById('chf-limit-lbl').textContent=t==='count'?'目標回数':'目標金額（円）';}
 document.getElementById('chf-type').addEventListener('change',updateChLimitLabel);
+let currentChallengeSrc='kakeibo';
+function setChallengeSrc(src){
+  currentChallengeSrc=src;
+  const kbBtn=document.getElementById('chf-src-kakeibo');
+  const acBtn=document.getElementById('chf-src-action');
+  const kbF=document.getElementById('chf-kakeibo-fields');
+  const acF=document.getElementById('chf-action-fields');
+  const hint=document.getElementById('chf-src-hint');
+  const lbl=document.getElementById('chf-limit-lbl');
+  if(src==='action'){
+    if(kbBtn)kbBtn.style.cssText='flex:1;padding:8px;border-radius:var(--rs);border:1px solid var(--bdr);background:none;color:var(--ink2);font-family:var(--sans);font-size:12px;cursor:pointer';
+    if(acBtn)acBtn.style.cssText='flex:1;padding:8px;border-radius:var(--rs);border:1.5px solid var(--acc);background:var(--acc-l);color:var(--acc);font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer';
+    if(kbF)kbF.style.display='none';
+    if(acF)acF.style.display='block';
+    if(hint)hint.textContent='行動ログ（ポイント記録）から自動集計します';
+    if(lbl)lbl.textContent='目標量';
+    const sel=document.getElementById('chf-action-id');
+    if(sel)sel.innerHTML=rewardSettings.actions.map(a=>'<option value="'+a.id+'">'+a.icon+' '+a.name+'（'+a.unit+'単位）</option>').join('');
+  }else{
+    if(kbBtn)kbBtn.style.cssText='flex:1;padding:8px;border-radius:var(--rs);border:1.5px solid var(--acc);background:var(--acc-l);color:var(--acc);font-family:var(--sans);font-size:12px;font-weight:500;cursor:pointer';
+    if(acBtn)acBtn.style.cssText='flex:1;padding:8px;border-radius:var(--rs);border:1px solid var(--bdr);background:none;color:var(--ink2);font-family:var(--sans);font-size:12px;cursor:pointer';
+    if(kbF)kbF.style.display='block';
+    if(acF)acF.style.display='none';
+    if(hint)hint.textContent='家計簿の支出記録から集計します';
+    if(lbl)lbl.textContent='目標回数';
+  }
+}
 function saveChallenge(){
-  const name=document.getElementById('chf-name').value.trim();const cat=document.getElementById('chf-cat').value;const type=document.getElementById('chf-type').value;const limit=parseInt(document.getElementById('chf-limit').value)||0;
+  const name=document.getElementById('chf-name').value.trim();
+  const limit=parseInt(document.getElementById('chf-limit').value)||0;
   if(!name||!limit)return;
-  const obj={name,cat,type,limit};
+  let obj;
+  if(currentChallengeSrc==='action'){
+    const actionId=parseInt(document.getElementById('chf-action-id').value)||0;
+    obj={name,src:'action',actionId,type:'count',cat:'other',limit};
+  }else{
+    const cat=document.getElementById('chf-cat').value;
+    const type=document.getElementById('chf-type').value;
+    obj={name,src:'kakeibo',cat,type,limit};
+  }
   if(editChId){const i=challenges.findIndex(x=>x.id===editChId);if(i>=0)challenges[i]={id:editChId,...obj};}
   else challenges.push({id:nextChId++,...obj});
   closeChallengeModal();saveChallenges();renderChallenges();
 }
-function delChallenge(){if(editChId&&confirm('削除しますか？')){challenges=challenges.filter(c=>c.id!==editChId);closeChallengeModal();saveChallenges();renderChallenges();}}
+async function delChallenge(){if(editChId&&await customConfirm('このチャレンジを削除しますか？')){challenges=challenges.filter(c=>c.id!==editChId);closeChallengeModal();saveChallenges();renderChallenges();}}
 
 /* ===== ページ切替（PC/スマホ両対応） ===== */
 const PAGE_TITLES={home:'サブスク',kakeibo:'家計簿',chart:'グラフ',audit:'AI診断',savings:'貯金',challenge:'チャレンジ',sync:'共有・設定'};
@@ -1642,9 +2483,10 @@ function showPage(name,_btn){
   if(titleEl)titleEl.textContent=PAGE_TITLES[name]||'';
 
   if(name==='chart')renderCharts();
+  if(name==='savings')renderBankAccounts();
   const fab=document.getElementById('kakeibo-fab');
   if(fab)fab.style.display=name==='kakeibo'?'block':'none';
-  if(name==='challenge'){renderChallenges();updateInvSim();renderFixedList();}
+  if(name==='challenge'){renderChallenges();updateInvSim();renderFixedList();renderRewardSummary();}
 }
 
 function toggleMore(){
@@ -1660,7 +2502,1271 @@ document.addEventListener('click',e=>{
   }
 });
 
+/* ===== サブスク自動記録（引落日に家計簿へ自動追加） ===== */
+function autoRecordSubs(){
+  const today = new Date();
+  const todayStr = today.toISOString().slice(0,10); // YYYY-MM-DD
+  const todayDay = today.getDate();
+  const todayYM = nowYM();
+
+  let recorded = 0;
+  subs.forEach(s => {
+    const monthly = toMonthly(s);
+    if(!monthly) return;
+
+    let shouldRecord = false;
+    let recordDate = todayStr;
+
+    if(s.cycle === 'monthly' && s.day === todayDay){
+      shouldRecord = true;
+    } else if(s.cycle === 'yearly'){
+      // 年払いは更新月の1日に記録
+      const renewM = s.renewMonth;
+      if(today.getMonth()+1 === renewM && todayDay === 1){
+        shouldRecord = true;
+      }
+    } else if(s.cycle === 'installment'){
+      const r = calcRemain(s.endDate);
+      if(r > 0 && s.day === todayDay){
+        shouldRecord = true;
+      }
+    }
+
+    if(!shouldRecord) return;
+
+    // 同日・同サービスの記録が既にあれば重複追加しない
+    const alreadyExists = kakeibo.some(k =>
+      k.date === recordDate &&
+      k.memo === s.name + '（サブスク）' &&
+      k.amount === monthly
+    );
+    if(alreadyExists) return;
+
+    // 家計簿カテゴリにマッピング（サブスクカテゴリ→家計簿カテゴリ）
+    const catMap = {
+      video:'sub', music:'sub', game:'sub', book:'sub',
+      learning:'education', work:'sub', ai:'sub', news:'sub', creative:'sub',
+      cloud:'internet', security:'internet', finance:'sub',
+      health:'health', sport:'fitness', food:'food', other:'sub'
+    };
+    const hkCat = catMap[s.cat] || 'other';
+
+    kakeibo.push({
+      id: nextHkId++,
+      date: recordDate,
+      type: 'expense',
+      cat: hkCat,
+      memo: s.name + '（サブスク）',
+      amount: monthly,
+      autoRecorded: true  // 自動記録フラグ
+    });
+    recorded++;
+  });
+
+  if(recorded > 0){
+    save();
+    showToast(`${recorded}件のサブスクを家計簿に自動記録しました`);
+  }
+}
+
+/* ===== AIリアルタイム家計分析 ===== */
+let aiLiveTimer = null;
+
+async function runAiLiveAnalysis(){
+  const m = nowYM();
+  const entries = kakeibo.filter(k => ym(k.date) === m);
+  if(!entries.length){ document.getElementById('ai-live-area').innerHTML=''; return; }
+
+  // カテゴリ別集計
+  const bycat = {};
+  entries.forEach(k => {
+    if(k.type==='expense') bycat[k.cat] = (bycat[k.cat]||0) + k.amount;
+  });
+  const totalExp = Object.values(bycat).reduce((a,v)=>a+v,0);
+  const catSummary = Object.entries(bycat).sort((a,b)=>b[1]-a[1])
+    .map(([c,v])=>`${(HK_CATS[c]||HK_CATS.other).label}:¥${v.toLocaleString()}`).join(', ');
+
+  // 今月の経過日数・残日数
+  const today = new Date();
+  const daysInMonth = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();
+  const daysPassed = today.getDate();
+  const daysLeft = daysInMonth - daysPassed;
+  const dailyAvg = daysPassed > 0 ? Math.round(totalExp / daysPassed) : 0;
+  const projectedTotal = Math.round(dailyAvg * daysInMonth);
+
+  const prompt = `20代男性社会人（一人暮らし・節約志向）の家計を分析してください。
+
+【今月の状況（${m.replace('-','年')}月 ${daysPassed}日経過 / 残${daysLeft}日）】
+支出合計: ¥${totalExp.toLocaleString()}
+カテゴリ別: ${catSummary}
+1日平均: ¥${dailyAvg.toLocaleString()}
+このペースだと月末: ¥${projectedTotal.toLocaleString()}
+
+【判断基準】
+・外食: 月3万円超で注意
+・食費全体: 月4〜5万円が目安
+・お酒: 月1万円超で注意
+・健康費（ジム・医療）は削減推奨しない
+・月末予測が収入の60%超なら警告
+
+以下のJSON形式のみで返してください（1〜2個のアドバイスを厳選）:
+[
+  {
+    "level": "ok"|"warn"|"danger",
+    "icon": "絵文字1つ",
+    "title": "15字以内のタイトル",
+    "body": "50字以内の具体的なアドバイス"
+  }
+]`;
+
+  // ローディング表示
+  const area = document.getElementById('ai-live-area');
+  area.innerHTML = `<div class="ai-live-card"><div style="font-size:12px;color:var(--ink3)">✦ AI分析中...</div></div>`;
+
+  try{
+    const res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:400,
+        messages:[{role:'user', content:prompt}]})
+    });
+    const data = await res.json();
+    const text = data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
+    const results = JSON.parse(text);
+    area.innerHTML = results.map(r=>`
+      <div class="ai-live-card ${r.level||'ok'}">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+          <span class="ai-live-icon">${r.icon||'💡'}</span>
+          <span class="ai-live-title" style="color:${r.level==='danger'?'var(--red)':r.level==='warn'?'var(--warn)':'var(--acc)'}">${r.title}</span>
+        </div>
+        <div class="ai-live-body">${r.body}</div>
+      </div>`).join('');
+  }catch(e){
+    area.innerHTML='';
+  }
+}
+
+// 記録するたびに少し遅延してAI分析を実行（連続入力時は最後の1回だけ）
+function scheduleAiLive(){
+  if(aiLiveTimer) clearTimeout(aiLiveTimer);
+  aiLiveTimer = setTimeout(()=>{ runAiLiveAnalysis(); }, 1500);
+}
+
+/* ===== カウンセリングチャット ===== */
+let chatHistory = [];
+let auditContext = null; // 診断結果を保持
+
+function initCounselingChat(auditResult){
+  auditContext = auditResult;
+  chatHistory = [];
+
+  // 初期メッセージ
+  const totalSaving = auditResult.saving_total || 0;
+  const issues = (auditResult.subs||[]).filter(s=>s.action!=='keep').length;
+  const savingPart = issues > 0
+    ? 'サブスクで月¥' + totalSaving.toLocaleString() + '節約できる可能性があります。'
+    : '現在のサブスクは適切に管理されています。';
+  const healthPart = auditResult.health_warning
+    ? '\n\n⚠️ 健康面: ' + auditResult.health_warning
+    : '';
+  const initMsg = '診断が完了しました！' + savingPart + healthPart
+    + '\n\n何でも聞いてください。具体的な節約方法・健康的な生活費バランス・おすすめのサービスなど、一緒に考えます！';
+
+  chatHistory.push({role:'assistant', content:initMsg});
+
+  const wrap = document.getElementById('counseling-wrap');
+  wrap.style.display = 'block';
+  renderChat();
+
+  // サジェスチョンを表示
+  const sugs = [];
+  if(issues > 0) sugs.push('どのサブスクから解約すべき？');
+  if(auditResult.health_warning) sugs.push('健康面を改善するには？');
+  sugs.push('食費を抑える具体的な方法は？');
+  sugs.push('月5万円貯めるには何を削ればいい？');
+  sugs.push('外食を減らすコツを教えて');
+  renderSuggestions(sugs.slice(0,4));
+}
+
+function renderChat(){
+  const el = document.getElementById('chat-messages');
+  el.innerHTML = chatHistory.map(m=>{
+    const txt = m.content.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+    return `<div class="chat-bubble ${m.role==='user'?'user':'ai'}">${txt}</div>`;
+  }).join('');
+  // 最新メッセージにスクロール
+  setTimeout(()=>{ el.scrollTop = el.scrollHeight; }, 100);
+}
+
+function renderSuggestions(sugs){
+  document.getElementById('chat-suggestions').innerHTML = sugs.map(s=>
+    `<button class="chat-sug" onclick="sendChatMsg('${s.replace(/'/g,'\'')}')">　${s}</button>`
+  ).join('');
+}
+
+async function sendChat(){
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  await sendChatMsg(msg);
+}
+
+async function sendChatMsg(msg){
+  document.getElementById('chat-suggestions').innerHTML = '';
+  chatHistory.push({role:'user', content:msg});
+  renderChat();
+
+  // thinking表示
+  const el = document.getElementById('chat-messages');
+  const thinking = document.createElement('div');
+  thinking.className = 'chat-bubble thinking';
+  thinking.textContent = '考えています...';
+  el.appendChild(thinking);
+
+  const btn = document.getElementById('chat-send-btn');
+  btn.disabled = true;
+
+  // 診断結果をコンテキストとして含める
+  const m = nowYM();
+  const hkEntries = kakeibo.filter(k=>ym(k.date)===m);
+  const totalExp = hkEntries.filter(k=>k.type==='expense').reduce((a,k)=>a+k.amount,0);
+  const catSummary = Object.entries(hkEntries.filter(k=>k.type==='expense').reduce((a,k)=>{a[k.cat]=(a[k.cat]||0)+k.amount;return a;},{}))
+    .map(([c,v])=>`${(HK_CATS[c]||HK_CATS.other).label}:¥${v.toLocaleString()}`).join(', ');
+  const subSummary = subs.map(s=>`${s.name}(¥${toMonthly(s).toLocaleString()}/月)`).join(', ');
+
+  const sim = getSimData();
+  const systemMsg = `あなたは20代男性社会人（一人暮らし・節約志向）の家計カウンセラーです。
+診断結果: ${JSON.stringify(auditContext||{})}
+今月の支出合計: ¥${totalExp.toLocaleString()}
+カテゴリ別: ${catSummary}
+登録サブスク: ${subSummary}
+
+【残高シミュレーション】
+現在の銀行残高: ¥${sim.bank.toLocaleString()}
+手取り月収: ¥${sim.income.toLocaleString()}（給料日: ${sim.payday}）
+家賃: ¥${sim.rent.toLocaleString()} / 食費見込み: ¥${sim.living.toLocaleString()}
+サブスク: ¥${sim.subTotal.toLocaleString()} / 貯金積立: ¥${sim.savingsTotal.toLocaleString()}
+家計簿実績: ¥${sim.actualTotal.toLocaleString()}
+給料日後の手元残高試算: ¥${sim.realBalance.toLocaleString()}
+貯金目標: ${sim.savingsGoals.map(g=>g.name+'（月¥'+g.monthly.toLocaleString()+'）').join('、')||'未設定'}
+
+【カウンセリング方針】
+・具体的な金額・サービス名・行動を示す
+・残高シミュの数字を使って具体的にアドバイスする
+・節約と健康のバランスを重視（削りすぎ注意）
+・20代男性社会人目線で現実的なアドバイス
+・日本語で回答。200字以内で簡潔に
+・必要に応じて次の質問候補を最後に(例:「例えば〇〇について詳しく聞きますか？」)`;
+
+  const messages = [{role:'user', content: systemMsg + '\n\n' + chatHistory[0]?.content}];
+  chatHistory.slice(1).forEach(h => messages.push({role: h.role, content: h.content}));
+
+  try{
+    const res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:600,
+        messages})
+    });
+    const data = await res.json();
+    const reply = data.content.map(c=>c.text||'').join('').trim();
+    thinking.remove();
+    chatHistory.push({role:'assistant', content:reply});
+    renderChat();
+
+    // フォローアップ提案
+    const followups = [];
+    if(reply.includes('サブスク')) followups.push('具体的にどれから解約する？');
+    if(reply.includes('食費')||reply.includes('自炊')) followups.push('自炊のコツをもっと教えて');
+    if(reply.includes('貯金')||reply.includes('積立')) followups.push('積立の始め方は？');
+    if(reply.includes('健康')||reply.includes('ジム')) followups.push('健康的な生活習慣のコツは？');
+    if(followups.length) renderSuggestions(followups.slice(0,3));
+  }catch(e){
+    thinking.remove();
+    chatHistory.push({role:'assistant', content:'申し訳ありません、エラーが発生しました。もう一度試してください。'});
+    renderChat();
+  }
+  btn.disabled = false;
+}
+
+/* ===== レシートスキャン ===== */
+let receiptItems = [];
+
+function openReceiptScanner(){
+  document.getElementById('receipt-modal').classList.add('open');
+  document.getElementById('receipt-preview').style.display='none';
+  document.getElementById('receipt-results').style.display='none';
+  document.getElementById('receipt-upload-area').style.display='block';
+  document.getElementById('receipt-status').textContent='';
+  receiptItems=[];
+}
+function closeReceiptModal(){
+  document.getElementById('receipt-modal').classList.remove('open');
+  document.getElementById('receipt-input').value='';
+}
+document.getElementById('receipt-modal').addEventListener('click',e=>{
+  if(e.target===document.getElementById('receipt-modal'))closeReceiptModal();
+});
+
+async function handleReceiptImage(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = async ev => {
+    const base64 = ev.target.result;
+    document.getElementById('receipt-img').src = base64;
+    document.getElementById('receipt-preview').style.display='block';
+    document.getElementById('receipt-upload-area').style.display='none';
+    document.getElementById('receipt-status').textContent='🔍 AIがレシートを解析中...';
+    const b64data = base64.split(',')[1];
+    const mediaType = file.type || 'image/jpeg';
+    const promptText = [
+      'このレシートまたは領収書を読み取って、支出項目をJSON形式で返してください。',
+      '日本円の家計簿として記録します。',
+      'カテゴリ: food, eat-out, transport, utility, health, fitness, beauty, education, clothing, leisure, alcohol, travel, other',
+      'JSONのみ返してください:',
+      '{"store":"店名","date":"YYYY-MM-DD","items":[{"memo":"商品名","amount":金額,"cat":"カテゴリ"}],"total":合計}'
+    ].join('\n');
+    try{
+      const res = await fetch('https://api.anthropic.com/v1/messages',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          model:'claude-sonnet-4-20250514',
+          max_tokens:1000,
+          messages:[{role:'user', content:[
+            {type:'image', source:{type:'base64', media_type:mediaType, data:b64data}},
+            {type:'text', text:promptText}
+          ]}]
+        })
+      });
+      const data = await res.json();
+      const text = data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
+      const result = JSON.parse(text);
+      receiptItems = result.items || [];
+      if(result.total && receiptItems.length === 0){
+        receiptItems = [{memo: result.store || 'レシート', amount: result.total, cat: 'other'}];
+      }
+      const today = new Date().toISOString().slice(0,10);
+      const recDate = result.date || today;
+      renderReceiptItems(recDate, result.store);
+      document.getElementById('receipt-status').textContent =
+        '\u2713 ' + (result.store||'') + '  ' + receiptItems.length + '件読み取りました';
+    }catch(err){
+      document.getElementById('receipt-status').innerHTML =
+        '<span style="color:var(--red)">読み取りに失敗しました。もう一度試すか手動で入力してください。</span>';
+      document.getElementById('receipt-upload-area').style.display='block';
+    }
+  };
+  reader.readAsDataURL(file);
+}
+function renderReceiptItems(date, store){
+  const list = document.getElementById('receipt-items-list');
+  list.innerHTML = receiptItems.map((item,i) => {
+    const hk = HK_CATS[item.cat]||HK_CATS.other;
+    return `<div style="background:var(--s2);border-radius:var(--rs);padding:10px 12px;display:flex;align-items:center;gap:8px">
+      <span style="font-size:16px">${hk.emoji}</span>
+      <div style="flex:1;min-width:0">
+        <input value="${item.memo||''}" oninput="receiptItems[${i}].memo=this.value"
+          style="width:100%;border:none;background:transparent;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink);padding:0;margin-bottom:3px">
+        <div style="display:flex;gap:6px;align-items:center">
+          <select oninput="receiptItems[${i}].cat=this.value"
+            style="font-size:11px;border:none;background:transparent;color:var(--ink3);font-family:var(--sans);padding:0">
+            ${Object.entries(HK_CATS).filter(([k])=>k!=='income'&&k!=='part-time').map(([k,v])=>
+              `<option value="${k}" ${k===item.cat?'selected':''}>${v.emoji} ${v.label}</option>`
+            ).join('')}
+          </select>
+        </div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:4px">
+          <span style="font-size:11px;color:var(--ink3)">¥</span>
+          <input type="number" value="${item.amount||0}" oninput="receiptItems[${i}].amount=parseInt(this.value)||0"
+            style="width:80px;border:1px solid var(--bdr);border-radius:6px;padding:4px 6px;font-family:var(--sans);font-size:13px;font-weight:500;text-align:right;background:var(--bg);color:var(--ink)">
+        </div>
+      </div>
+      <button onclick="receiptItems.splice(${i},1);renderReceiptItems('${date}','${store||''}')"
+        style="border:none;background:none;color:var(--red);font-size:18px;cursor:pointer;padding:0;flex-shrink:0">×</button>
+    </div>`;
+  }).join('');
+  // 合計
+  const total = receiptItems.reduce((a,it)=>a+(it.amount||0),0);
+  list.insertAdjacentHTML('beforeend',
+    `<div style="display:flex;justify-content:space-between;font-size:13px;font-weight:500;padding:8px 4px;border-top:1px solid var(--bdr)">
+      <span>合計</span><span>¥${total.toLocaleString()}</span>
+    </div>`
+  );
+  // 日付を data属性に保存
+  list.dataset.date = date;
+  document.getElementById('receipt-results').style.display='block';
+  document.getElementById('receipt-confirm-btn').textContent = `${receiptItems.length}件をすべて記録する`;
+}
+
+function confirmReceiptItems(){
+  const date = document.getElementById('receipt-items-list').dataset.date || new Date().toISOString().slice(0,10);
+  receiptItems.forEach(item=>{
+    if(!item.amount) return;
+    kakeibo.push({
+      id: nextHkId++,
+      date,
+      type: 'expense',
+      cat: item.cat||'other',
+      memo: item.memo||'',
+      amount: item.amount
+    });
+  });
+  save(); renderKakeibo(); updateSim();
+  closeReceiptModal();
+  showToast(`${receiptItems.length}件を家計簿に記録しました`);
+  scheduleAiLive();
+}
+
+/* ===== ご褒美ポイントシステム ===== */
+let rewardSettings = {
+  rate: 100, // 1pt = 100円
+  cap: 5000, // 月の上限
+  actions: [
+    {id:1, name:'勉強・読書', unit:'時間', pointPer:10, icon:'📚'},
+    {id:2, name:'運動・ジム', unit:'回', pointPer:15, icon:'🏋️'},
+    {id:3, name:'自炊', unit:'食', pointPer:5, icon:'🍳'},
+    {id:4, name:'節約達成', unit:'回', pointPer:20, icon:'💰'},
+  ]
+};
+let rewardLogs = []; // {id, date, actionId, amount, points}
+let nextRewardLogId = 1;
+let nextRewardActionId = 5;
+let editRewardActionId = null;
+
+function saveRewardData(){
+  try{ localStorage.setItem('subsave_reward', JSON.stringify({settings:rewardSettings, logs:rewardLogs})); }catch(e){}
+}
+function loadRewardData(){
+  try{
+    const d = JSON.parse(localStorage.getItem('subsave_reward')||'{}');
+    if(d.settings){ rewardSettings = {...rewardSettings, ...d.settings}; }
+    if(d.logs){ rewardLogs = d.logs; nextRewardLogId = Math.max(...rewardLogs.map(l=>l.id),0)+1; }
+  }catch(e){}
+}
+
+function calcMonthlyPoints(){
+  const m = nowYM();
+  return rewardLogs.filter(l=>l.date.startsWith(m)).reduce((a,l)=>a+l.points,0);
+}
+function calcMonthlyMoney(){
+  const pts = calcMonthlyPoints();
+  const money = pts * rewardSettings.rate;
+  return Math.min(money, rewardSettings.cap||Infinity);
+}
+
+function renderRewardSummary(){
+  const pts = calcMonthlyPoints();
+  const money = calcMonthlyMoney();
+  const cap = rewardSettings.cap || 0;
+  const pct = cap > 0 ? Math.min(100, Math.round(money/cap*100)) : 0;
+  const pdEl = document.getElementById('reward-points-display');
+  const mdEl = document.getElementById('reward-money-display');
+  const pbEl = document.getElementById('reward-progress-bar');
+  if(pdEl) pdEl.textContent = pts + ' pt';
+  if(mdEl) mdEl.textContent = '¥' + money.toLocaleString();
+  if(pbEl) pbEl.style.width = pct + '%';
+
+  const logEl = document.getElementById('reward-log-list');
+  if(!logEl) return;
+  const m = nowYM();
+  const logs = rewardLogs.filter(l=>l.date.startsWith(m)).sort((a,b)=>b.date.localeCompare(a.date));
+  if(!logs.length){
+    logEl.innerHTML = '<div style="font-size:13px;color:var(--ink3);text-align:center;padding:16px">まだ記録がありません。頑張った行動を記録しよう！</div>';
+    return;
+  }
+  logEl.innerHTML = logs.map(l=>{
+    const action = rewardSettings.actions.find(a=>a.id===l.actionId)||{name:'行動',icon:'⭐',unit:''};
+    return `<div class="item" style="padding:10px 13px">
+      <span style="font-size:20px">${action.icon}</span>
+      <div class="item-info">
+        <div class="item-name">${action.name}</div>
+        <div class="item-meta">${l.amount}${action.unit} · ${l.date.slice(5).replace('-','/')}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:14px;font-weight:500;color:var(--acc)">+${l.points}pt</div>
+        <div style="font-size:11px;color:var(--ink3)">¥${(l.points*rewardSettings.rate).toLocaleString()}</div>
+      </div>
+      <button onclick="deleteRewardLog(${l.id})" class="act-btn del">🗑️</button>
+    </div>`;
+  }).join('');
+}
+
+async function deleteRewardLog(id){
+  if(!await customConfirm('この記録を削除しますか？')) return;
+  rewardLogs = rewardLogs.filter(l=>l.id!==id);
+  saveRewardData(); renderRewardSummary();
+}
+
+/* ポイント記録モーダル */
+function openRewardLogModal(){
+  const sel = document.getElementById('rl-action-sel');
+  if(!sel) return;
+  sel.innerHTML = rewardSettings.actions.map(a=>
+    `<option value="${a.id}">${a.icon} ${a.name}（${a.pointPer}pt/${a.unit}）</option>`
+  ).join('');
+  updateRewardPreview();
+  document.getElementById('reward-log-modal').classList.add('open');
+}
+function closeRewardLogModal(){ document.getElementById('reward-log-modal').classList.remove('open'); }
+document.getElementById('reward-log-modal').addEventListener('click',e=>{if(e.target===document.getElementById('reward-log-modal'))closeRewardLogModal();});
+
+function updateRewardPreview(){
+  const selEl = document.getElementById('rl-action-sel');
+  const amtEl = document.getElementById('rl-amount');
+  const preEl = document.getElementById('rl-preview');
+  const lblEl = document.getElementById('rl-amount-lbl');
+  if(!selEl||!amtEl||!preEl) return;
+  const action = rewardSettings.actions.find(a=>a.id===parseInt(selEl.value));
+  if(!action) return;
+  lblEl.textContent = action.unit + '数';
+  const amt = parseFloat(amtEl.value)||1;
+  const pts = Math.round(action.pointPer * amt);
+  const money = Math.min(pts * rewardSettings.rate, rewardSettings.cap||999999);
+  preEl.textContent = `+${pts}pt → ¥${money.toLocaleString()}のご褒美！`;
+}
+
+function saveRewardLog(){
+  const selEl = document.getElementById('rl-action-sel');
+  const amtEl = document.getElementById('rl-amount');
+  const action = rewardSettings.actions.find(a=>a.id===parseInt(selEl.value));
+  if(!action) return;
+  const amt = parseFloat(amtEl.value)||1;
+  const pts = Math.round(action.pointPer * amt);
+  rewardLogs.push({
+    id: nextRewardLogId++,
+    date: new Date().toISOString().slice(0,10),
+    actionId: action.id,
+    amount: amt,
+    points: pts
+  });
+  saveRewardData(); renderRewardSummary();
+  closeRewardLogModal();
+  showToast('+' + pts + 'pt 獲得！ご褒美 ¥' + Math.min(pts*rewardSettings.rate, rewardSettings.cap||999999).toLocaleString());
+  autoSyncToNotion('action');
+  // 記録後に自動でAIアドバイス
+  runRewardAIAdvice();
+}
+
+async function runRewardAIAdvice(){
+  const btn = document.getElementById('reward-ai-btn');
+  const area = document.getElementById('reward-ai-advice');
+  if(!area) return;
+  if(btn){ btn.disabled=true; btn.textContent='分析中...'; }
+  area.innerHTML = '<div class="skel" style="height:60px;border-radius:var(--r)"></div>';
+
+  const m = nowYM();
+  const logs = rewardLogs.filter(l=>l.date.startsWith(m));
+  if(!logs.length){
+    area.innerHTML = '';
+    if(btn){ btn.disabled=false; btn.textContent='✦ AIアドバイス'; }
+    return;
+  }
+
+  // 行動ごとの集計
+  const summary = {};
+  logs.forEach(l=>{
+    const a = rewardSettings.actions.find(x=>x.id===l.actionId)||{name:'不明',unit:''};
+    if(!summary[a.name]) summary[a.name]={total:0, unit:a.unit, pts:0};
+    summary[a.name].total += l.amount;
+    summary[a.name].pts += l.points;
+  });
+  const summaryText = Object.entries(summary).map(([name,v])=>
+    name+': '+v.total+v.unit+'（'+v.pts+'pt）'
+  ).join('、');
+
+  const totalPts = calcMonthlyPoints();
+  const totalMoney = calcMonthlyMoney();
+  const today = new Date();
+  const daysInMonth = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();
+  const daysPassed = today.getDate();
+
+  // 家計簿データも参照
+  const hkExp = kakeibo.filter(k=>ym(k.date)===m&&k.type==='expense').reduce((a,k)=>a+k.amount,0);
+  const cap = rewardSettings.cap || 0;
+
+  const prompt = '20代男性社会人（一人暮らし・節約志向）の行動記録を分析してください。\n\n' +
+    '【今月の行動ログ（'+m.replace('-','年')+'月 '+daysPassed+'日経過/'+daysInMonth+'日）】\n' +
+    summaryText + '\n' +
+    '合計ポイント: ' + totalPts + 'pt\n' +
+    'ご褒美金額: ¥' + totalMoney.toLocaleString() + '（上限¥' + (cap||'なし') + '）\n' +
+    '今月の実際の支出: ¥' + hkExp.toLocaleString() + '\n\n' +
+    '【ポイント設定】\n' +
+    rewardSettings.actions.map(a=>a.name+': '+a.pointPer+'pt/'+a.unit).join('、') + '\n' +
+    '1pt=¥' + rewardSettings.rate + '\n\n' +
+    '以下を分析して80字以内でアドバイスしてください（JSON形式のみ）:\n' +
+    '{"level":"ok"|"warn"|"great","icon":"絵文字","message":"アドバイス本文","tip":"具体的なアクション提案20字以内"}';
+
+  try{
+    const res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:300,
+        messages:[{role:'user', content:prompt}]})
+    });
+    const data = await res.json();
+    const r = JSON.parse(data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim());
+    const colors = {ok:'var(--acc-l)',warn:'var(--warn-l)',great:'#FDF4FF'};
+    const textColors = {ok:'var(--acc)',warn:'var(--warn)',great:'#6A3AA2'};
+    const borderColors = {ok:'rgba(45,90,61,.2)',warn:'rgba(184,134,11,.2)',great:'rgba(106,58,162,.2)'};
+    const lv = r.level||'ok';
+    area.innerHTML = '<div style="background:'+colors[lv]+';border:1px solid '+borderColors[lv]+';border-radius:var(--r);padding:13px 15px;">' +
+      '<div style="display:flex;align-items:flex-start;gap:10px">' +
+      '<span style="font-size:22px;flex-shrink:0">'+r.icon+'</span>' +
+      '<div><div style="font-size:13px;color:'+textColors[lv]+';font-weight:500;margin-bottom:4px;line-height:1.6">'+r.message+'</div>' +
+      (r.tip?'<div style="font-size:11px;color:var(--ink2);background:rgba(0,0,0,.05);border-radius:20px;padding:3px 10px;display:inline-block">💡 '+r.tip+'</div>':'') +
+      '</div></div></div>';
+  }catch(e){
+    area.innerHTML='';
+  }
+  if(btn){ btn.disabled=false; btn.textContent='✦ AIアドバイス'; }
+}
+
+/* ポイント設定モーダル */
+function openRewardSettingsModal(){
+  document.getElementById('reward-rate-input').value = rewardSettings.rate;
+  document.getElementById('reward-cap-input').value = rewardSettings.cap||5000;
+  renderRewardActionsSettings();
+  document.getElementById('reward-settings-modal').classList.add('open');
+}
+function closeRewardSettingsModal(){ document.getElementById('reward-settings-modal').classList.remove('open'); }
+document.getElementById('reward-settings-modal').addEventListener('click',e=>{if(e.target===document.getElementById('reward-settings-modal'))closeRewardSettingsModal();});
+
+function renderRewardActionsSettings(){
+  const el = document.getElementById('reward-actions-settings');
+  if(!el) return;
+  el.innerHTML = rewardSettings.actions.map(a=>`
+    <div style="background:var(--s2);border-radius:var(--rs);padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:8px">
+      <span style="font-size:18px">${a.icon}</span>
+      <div style="flex:1;min-width:0">
+        <input value="${a.name}" oninput="updateRewardAction(${a.id},'name',this.value)"
+          style="width:100%;border:none;background:transparent;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink);padding:0;margin-bottom:4px">
+        <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--ink3)">
+          <input type="number" value="${a.pointPer}" min="1" oninput="updateRewardAction(${a.id},'pointPer',parseInt(this.value)||1)"
+            style="width:50px;border:1px solid var(--bdr);border-radius:5px;padding:2px 5px;font-family:var(--sans);font-size:11px;background:var(--bg);color:var(--ink)">
+          <span>pt /</span>
+          <input value="${a.unit}" oninput="updateRewardAction(${a.id},'unit',this.value)"
+            style="width:45px;border:1px solid var(--bdr);border-radius:5px;padding:2px 5px;font-family:var(--sans);font-size:11px;background:var(--bg);color:var(--ink)">
+          <input value="${a.icon}" oninput="updateRewardAction(${a.id},'icon',this.value)"
+            style="width:40px;border:1px solid var(--bdr);border-radius:5px;padding:2px 5px;font-family:var(--sans);font-size:12px;text-align:center;background:var(--bg)">
+        </div>
+      </div>
+      <button onclick="removeRewardAction(${a.id})" style="border:none;background:none;color:var(--red);font-size:18px;cursor:pointer;padding:0">×</button>
+    </div>
+  `).join('');
+}
+function updateRewardAction(id, key, val){
+  const a = rewardSettings.actions.find(x=>x.id===id);
+  if(a) a[key] = val;
+}
+function addRewardAction(){
+  rewardSettings.actions.push({id:nextRewardActionId++, name:'新しい行動', unit:'回', pointPer:10, icon:'⭐'});
+  renderRewardActionsSettings();
+}
+function removeRewardAction(id){
+  rewardSettings.actions = rewardSettings.actions.filter(a=>a.id!==id);
+  renderRewardActionsSettings();
+}
+function saveRewardSettings(){
+  rewardSettings.rate = parseInt(document.getElementById('reward-rate-input').value)||100;
+  rewardSettings.cap = parseInt(document.getElementById('reward-cap-input').value)||0;
+  saveRewardData(); renderRewardSummary();
+  closeRewardSettingsModal();
+  showToast('設定を保存しました');
+}
+
+/* ===== AIポイント比率自動設定 ===== */
+async function runAIRewardSetup(){
+  const btn = document.getElementById('ai-reward-setup-btn');
+  const result = document.getElementById('ai-reward-setup-result');
+  btn.disabled = true;
+  btn.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite">⟳</span> AIが分析中...';
+  result.innerHTML = '<div class="skel" style="height:50px;border-radius:var(--rs)"></div>';
+
+  // 家計・サブスクデータを収集
+  const m = nowYM();
+  const hkEntries = kakeibo.filter(k=>ym(k.date)===m);
+  const totalExp = hkEntries.filter(k=>k.type==='expense').reduce((a,k)=>a+k.amount,0);
+  const eatOut = hkEntries.filter(k=>k.cat==='eat-out').reduce((a,k)=>a+k.amount,0);
+  const leisure = hkEntries.filter(k=>k.cat==='leisure').reduce((a,k)=>a+k.amount,0);
+  const fitness = hkEntries.filter(k=>k.cat==='fitness').reduce((a,k)=>a+k.amount,0);
+  const income = parseInt(document.getElementById('sim-income').value)||0;
+  const saving = goals.reduce((a,g)=>a+(g.monthly||0),0);
+
+  const prompt = [
+    '20代男性社会人（一人暮らし・節約志向・健康重視）のご褒美ポイント比率を設定してください。',
+    '',
+    '【家計情報】',
+    '手取り月収: \u00A5' + income.toLocaleString(),
+    '今月の支出合計: \u00A5' + totalExp.toLocaleString(),
+    '外食・カフェ: \u00A5' + eatOut.toLocaleString(),
+    '娯楽・趣味: \u00A5' + leisure.toLocaleString(),
+    'ジム・スポーツ: \u00A5' + fitness.toLocaleString(),
+    '毎月の貯金目標: \u00A5' + saving.toLocaleString(),
+    '',
+    '【要件】',
+    '・節約しながらも健康的な生活習慣を維持できるバランスに設定',
+    '・外食や娯楽に使いすぎている場合は、それらのご褒美比率を下げる',
+    '・運動・自炊・勉強を習慣化しやすいポイント設定にする',
+    '・月のご褒美上限は収入の3〜5%程度が適切',
+    '',
+    'JSON形式のみで返してください:',
+    '{"rate":1pt何円,"cap":月上限円,"actions":[{"name":"行動名","unit":"単位","pointPer":1単位のpt数,"icon":"絵文字","reason":"設定理由10字"}],"summary":"全体の方針30字以内"}'
+  ].join('\n');
+  try{
+    const res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:800,
+        messages:[{role:'user', content:prompt}]})
+    });
+    const data = await res.json();
+    const r = JSON.parse(data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim());
+
+    // 設定を適用
+    if(r.rate) rewardSettings.rate = r.rate;
+    if(r.cap) rewardSettings.cap = r.cap;
+    if(r.actions && r.actions.length){
+      rewardSettings.actions = r.actions.map((a,i)=>({
+        id: i+1, name:a.name, unit:a.unit, pointPer:a.pointPer, icon:a.icon||'⭐'
+      }));
+      nextRewardActionId = r.actions.length + 1;
+    }
+
+    // フォームに反映
+    document.getElementById('reward-rate-input').value = rewardSettings.rate;
+    document.getElementById('reward-cap-input').value = rewardSettings.cap;
+    renderRewardActionsSettings();
+
+    result.innerHTML = '<div style="background:var(--acc-l);border:1px solid rgba(45,90,61,.2);border-radius:var(--rs);padding:10px 12px;font-size:12px;color:var(--acc);line-height:1.7">' +
+      '✓ AIが設定しました<br>' +
+      '<span style="color:var(--ink2)">' + (r.summary||'') + '</span></div>';
+
+    // AIチャレンジも自動生成
+    runAIChallengeSetup();
+
+  }catch(e){
+    result.innerHTML = '<div style="font-size:12px;color:var(--red)">設定に失敗しました。もう一度お試しください。</div>';
+  }
+  btn.disabled = false;
+  btn.innerHTML = '<span>✦</span> AIに最適なポイント比率を決めてもらう';
+}
+
+/* ===== AIチャレンジ自動生成 ===== */
+async function runAIChallengeSetup(){
+  const m = nowYM();
+  const hkEntries = kakeibo.filter(k=>ym(k.date)===m);
+  const eatOut = hkEntries.filter(k=>k.cat==='eat-out').reduce((a,k)=>a+k.amount,0);
+  const alcohol = hkEntries.filter(k=>k.cat==='alcohol').reduce((a,k)=>a+k.amount,0);
+  const leisure = hkEntries.filter(k=>k.cat==='leisure').reduce((a,k)=>a+k.amount,0);
+  const fitness = hkEntries.filter(k=>k.cat==='fitness').reduce((a,k)=>a+k.amount,0);
+  const income = parseInt(document.getElementById('sim-income').value)||0;
+
+  // 既存チャレンジをAIに渡して重複・類似を避ける
+  const existingList = challenges.length
+    ? challenges.map(c=>c.name).join('、')
+    : 'なし';
+
+  const prompt = [
+    '20代男性社会人（一人暮らし）の生活習慣改善のためのチャレンジを提案してください。',
+    '',
+    '【今月の家計】',
+    '手取り月収: \u00A5' + income.toLocaleString(),
+    '外食: \u00A5' + eatOut.toLocaleString() + ' / お酒: \u00A5' + alcohol.toLocaleString(),
+    '娯楽: \u00A5' + leisure.toLocaleString() + ' / ジム: \u00A5' + fitness.toLocaleString(),
+    '',
+    '【既存のチャレンジ（これと重複・類似するものは提案しないこと）】',
+    existingList,
+    '',
+    '【条件】',
+    '・節約と健康の両方を意識した具体的なチャレンジ',
+    '・既存チャレンジと内容・カテゴリが被らない新しい目標のみ提案',
+    '・既存チャレンジを置き換える場合はその旨をnameに含めず別名で提案',
+    '・達成しやすい現実的な目標',
+    '・1〜3個のチャレンジを提案（既存と被らない分だけでOK）',
+    '・既存と十分カバーされている場合は空配列[]を返してOK',
+    '',
+    'JSON形式のみ:',
+    '[{"name":"チャレンジ名","cat":"カテゴリキー(eat-out/food/health/fitness/leisure/other)","type":"count|amount","limit":目標値,"reason":"理由15字"}]'
+  ].join('\n');
+
+  try{
+    const res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-4-20250514', max_tokens:600,
+        messages:[{role:'user', content:prompt}]})
+    });
+    const data = await res.json();
+    const newChallenges = JSON.parse(data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim());
+
+    if(!newChallenges.length){
+      showToast('既存チャレンジで十分カバーされています');
+      return;
+    }
+
+    // 類似チェック：同じカテゴリ×タイプの組み合わせが既にある場合は上書き
+    let added = 0, updated = 0;
+    newChallenges.forEach(c=>{
+      // 完全同名 or 同カテゴリ×同タイプ の既存を探す
+      const sameNameIdx = challenges.findIndex(x=>x.name===c.name);
+      const sameCatTypeIdx = challenges.findIndex(x=>x.cat===(c.cat||'other')&&x.type===(c.type||'count'));
+
+      if(sameNameIdx >= 0){
+        // 同名→上書き
+        challenges[sameNameIdx] = {...challenges[sameNameIdx], cat:c.cat||'other', type:c.type||'count', limit:c.limit||5};
+        updated++;
+      } else if(sameCatTypeIdx >= 0){
+        // 同カテゴリ×同タイプ→上書き（類似扱い）
+        challenges[sameCatTypeIdx] = {...challenges[sameCatTypeIdx], name:c.name, limit:c.limit||5};
+        updated++;
+      } else {
+        // 新規追加
+        challenges.push({id:nextChId++, name:c.name, cat:c.cat||'other', type:c.type||'count', limit:c.limit||5});
+        added++;
+      }
+    });
+    saveChallenges(); renderChallenges();
+    const msg = added > 0 && updated > 0
+      ? added+'件追加・'+updated+'件更新しました'
+      : added > 0 ? 'AIが'+added+'件のチャレンジを追加しました'
+      : updated+'件のチャレンジを更新しました';
+    showToast(msg);
+  }catch(e){
+    showToast('チャレンジの生成に失敗しました');
+  }
+}
+
+/* ===== Notion連携（Make Webhook方式） ===== */
+let notionSettings = {kakeiboWebhook:'', actionWebhook:''};
+
+function saveNotionSettings(){
+  const kw = document.getElementById('notion-kakeibo-webhook').value.trim();
+  const aw = document.getElementById('notion-action-webhook').value.trim();
+  if(!kw && !aw){ showToast('Webhook URLを入力してください'); return; }
+  notionSettings = {kakeiboWebhook:kw, actionWebhook:aw};
+  try{ localStorage.setItem('subsave_notion', JSON.stringify(notionSettings)); }catch(e){}
+  updateNotionBanner();
+  showToast('Notion設定を保存しました');
+}
+
+function loadNotionSettings(){
+  try{
+    const d = JSON.parse(localStorage.getItem('subsave_notion')||'{}');
+    // 旧形式(token方式)と新形式(webhook方式)に対応
+    if(d.kakeiboWebhook || d.actionWebhook){
+      notionSettings = {kakeiboWebhook:d.kakeiboWebhook||'', actionWebhook:d.actionWebhook||''};
+      const kf = document.getElementById('notion-kakeibo-webhook');
+      const af = document.getElementById('notion-action-webhook');
+      if(kf) kf.value = notionSettings.kakeiboWebhook;
+      if(af) af.value = notionSettings.actionWebhook;
+    }
+  }catch(e){}
+  updateNotionBanner();
+}
+
+function updateNotionBanner(){
+  const el = document.getElementById('notion-status-banner');
+  if(!el) return;
+  const hasWebhook = notionSettings.kakeiboWebhook || notionSettings.actionWebhook;
+  if(hasWebhook){
+    const parts = [];
+    if(notionSettings.kakeiboWebhook) parts.push('家計簿');
+    if(notionSettings.actionWebhook) parts.push('行動ログ');
+    el.innerHTML = '<div style="background:var(--acc-l);border:1px solid rgba(45,90,61,.2);border-radius:var(--rs);padding:8px 12px;margin-bottom:10px;font-size:12px;color:var(--acc)">✓ ' + parts.join('・') + 'のNotion連携が設定されています</div>';
+  } else {
+    el.innerHTML = '';
+  }
+}
+
+async function sendToNotionWebhook(webhookUrl, data){
+  const res = await fetch(webhookUrl, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  return res.ok;
+}
+
+async function autoSyncToNotion(type){
+  if(type==='kakeibo' && !notionSettings.kakeiboWebhook) return;
+  if(type==='action' && !notionSettings.actionWebhook) return;
+  try{
+    if(type==='kakeibo'){
+      const last = kakeibo[kakeibo.length-1];
+      if(!last) return;
+      const cat = HK_CATS[last.cat]||HK_CATS.other;
+      await sendToNotionWebhook(notionSettings.kakeiboWebhook, {
+        date: last.date,
+        type: last.type==='expense'?'支出':'収入',
+        category: cat.emoji+' '+cat.label,
+        memo: last.memo||'',
+        amount: last.amount
+      });
+    } else {
+      const last = rewardLogs[rewardLogs.length-1];
+      if(!last) return;
+      const action = rewardSettings.actions.find(a=>a.id===last.actionId)||{name:'行動',icon:'⭐',unit:'回'};
+      await sendToNotionWebhook(notionSettings.actionWebhook, {
+        date: last.date,
+        action: action.icon+' '+action.name,
+        amount: last.amount,
+        unit: action.unit,
+        points: last.points
+      });
+    }
+  }catch(e){ /* バックグラウンド送信エラーは無視 */ }
+}
+
+async function syncToNotion(){
+  const kw = notionSettings.kakeiboWebhook;
+  const aw = notionSettings.actionWebhook;
+  if(!kw && !aw){ showToast('先にWebhook URLを設定してください'); return; }
+  const btn = document.getElementById('notion-sync-btn');
+  const status = document.getElementById('notion-sync-status');
+  if(btn) btn.disabled = true;
+  if(status) status.textContent = '送信中...';
+
+  const m = nowYM();
+  let sent = 0, errors = 0;
+
+  if(kw){
+    const entries = kakeibo.filter(k=>ym(k.date)===m);
+    for(const k of entries){
+      try{
+        const cat = HK_CATS[k.cat]||HK_CATS.other;
+        const ok = await sendToNotionWebhook(kw, {
+          date:k.date, type:k.type==='expense'?'支出':'収入',
+          category:cat.emoji+' '+cat.label, memo:k.memo||'', amount:k.amount
+        });
+        if(ok) sent++; else errors++;
+      }catch(e){ errors++; }
+    }
+  }
+
+  if(aw){
+    const logs = rewardLogs.filter(l=>l.date.startsWith(m));
+    for(const l of logs){
+      try{
+        const action = rewardSettings.actions.find(a=>a.id===l.actionId)||{name:'行動',icon:'⭐',unit:'回'};
+        const ok = await sendToNotionWebhook(aw, {
+          date:l.date, action:action.icon+' '+action.name,
+          amount:l.amount, unit:action.unit, points:l.points
+        });
+        if(ok) sent++; else errors++;
+      }catch(e){ errors++; }
+    }
+  }
+
+  if(btn) btn.disabled = false;
+  if(status){
+    if(errors>0){
+      status.innerHTML = '<span style="color:var(--red)">⚠️ ' + errors + '件失敗。MakeのWebhook URLと設定を確認してください。</span><br>' +
+        '<span style="color:var(--ink3)">※ MakeのシナリオがONになっているか確認してください。</span>';
+    } else {
+      status.textContent = '✓ ' + sent + '件をNotionに送信しました（' + m.replace('-','年')+'月分）';
+    }
+  }
+  if(errors===0) showToast(sent + '件をNotionに送信しました');
+}
+
+async function syncToNotion(){
+  if(!notionSettings.token){ showToast('先にNotion設定を保存してください'); return; }
+  const btn = document.getElementById('notion-sync-btn');
+  const status = document.getElementById('notion-sync-status');
+  if(btn) btn.disabled = true;
+  if(status) status.textContent = '同期中...';
+
+  let successCount = 0, errorMsg = '';
+
+  // 家計簿をNotionに送信
+  if(notionSettings.kakeiboDb){
+    try{
+      const m = nowYM();
+      const entries = kakeibo.filter(k=>ym(k.date)===m);
+      for(const k of entries){
+        const hkCat = HK_CATS[k.cat]||HK_CATS.other;
+        const body = {
+          parent: {database_id: notionSettings.kakeiboDb},
+          properties: {
+            '名前': {title:[{text:{content:k.memo||hkCat.label}}]},
+            '日付': {date:{start:k.date}},
+            'カテゴリ': {rich_text:[{text:{content:hkCat.emoji+' '+hkCat.label}}]},
+            '金額': {number:k.amount},
+            '種別': {select:{name:k.type==='expense'?'支出':'収入'}}
+          }
+        };
+        await notionFetch('POST', '/pages', body);
+        successCount++;
+      }
+    }catch(e){ errorMsg += '家計簿: ' + e.message + ' '; }
+  }
+
+  // 行動ログをNotionに送信
+  if(notionSettings.actionDb){
+    try{
+      const m = nowYM();
+      const logs = rewardLogs.filter(l=>l.date.startsWith(m));
+      for(const l of logs){
+        const action = rewardSettings.actions.find(a=>a.id===l.actionId)||{name:'行動',icon:'⭐',unit:'回'};
+        const body = {
+          parent: {database_id: notionSettings.actionDb},
+          properties: {
+            '名前': {title:[{text:{content:action.icon+' '+action.name}}]},
+            '日付': {date:{start:l.date}},
+            '量': {number:l.amount},
+            '単位': {rich_text:[{text:{content:action.unit}}]},
+            'ポイント': {number:l.points}
+          }
+        };
+        await notionFetch('POST', '/pages', body);
+        successCount++;
+      }
+    }catch(e){ errorMsg += '行動ログ: ' + e.message; }
+  }
+
+  if(btn) btn.disabled = false;
+  if(errorMsg){
+    if(status) status.innerHTML = '<span style="color:var(--red)">エラー: ' + errorMsg + '<br>※ NotionのCORS制限により直接連携ができない場合があります。下記の方法をお試しください。</span>';
+    showNotionAlternative();
+  } else {
+    if(status) status.textContent = '✓ ' + successCount + '件を同期しました（' + nowYM() + '月分）';
+    showToast(successCount + '件をNotionに同期しました');
+  }
+}
+
+function showNotionAlternative(){
+  const status = document.getElementById('notion-sync-status');
+  if(!status) return;
+  // CORSエラーの場合はCSVコピー方式を提案
+  const m = nowYM();
+  const entries = kakeibo.filter(k=>ym(k.date)===m);
+  const logs = rewardLogs.filter(l=>l.date.startsWith(m));
+  let csv = '日付,種別,カテゴリ,メモ,金額\n';
+  entries.forEach(k=>{
+    const cat = HK_CATS[k.cat]||HK_CATS.other;
+    csv += k.date+','+(k.type==='expense'?'支出':'収入')+','+cat.label+','+(k.memo||'')+','+k.amount+'\n';
+  });
+  if(logs.length){
+    csv += '\n日付,行動,量,単位,ポイント\n';
+    logs.forEach(l=>{
+      const a = rewardSettings.actions.find(x=>x.id===l.actionId)||{name:'行動',unit:'回'};
+      csv += l.date+','+a.name+','+l.amount+','+a.unit+','+l.points+'\n';
+    });
+  }
+  status.innerHTML += '<br><br><strong>代替方法：CSVをNotionに貼り付け</strong><br><button onclick="copyNotionCsv()" style="background:var(--acc);color:#fff;border:none;border-radius:var(--rs);padding:7px 14px;font-family:var(--sans);font-size:12px;cursor:pointer;margin-top:6px">📋 CSVをコピー → Notionに貼り付け</button>';
+  window._notionCsv = csv;
+}
+
+async function copyNotionCsv(){
+  if(!window._notionCsv) return;
+  try{
+    await navigator.clipboard.writeText(window._notionCsv);
+    showToast('CSVをコピーしました。Notionのページに貼り付けてください');
+  }catch(e){
+    showToast('コピーできませんでした');
+  }
+}
+
+/* ===== Notionスクショ読み込み ===== */
+let notionScanItems = []; // {type:'kakeibo'|'action', data:{...}}
+
+function openNotionScanner(){
+  document.getElementById('notion-scan-modal').classList.add('open');
+  document.getElementById('notion-scan-preview').style.display='none';
+  document.getElementById('notion-scan-results').style.display='none';
+  document.getElementById('notion-scan-upload-area').style.display='block';
+  document.getElementById('notion-scan-status').textContent='';
+  notionScanItems=[];
+}
+function closeNotionScanModal(){
+  document.getElementById('notion-scan-modal').classList.remove('open');
+  document.getElementById('notion-scan-input').value='';
+}
+document.getElementById('notion-scan-modal').addEventListener('click',e=>{
+  if(e.target===document.getElementById('notion-scan-modal'))closeNotionScanModal();
+});
+
+async function handleNotionScanImage(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = async ev => {
+    const base64 = ev.target.result;
+    document.getElementById('notion-scan-img').src = base64;
+    document.getElementById('notion-scan-preview').style.display='block';
+    document.getElementById('notion-scan-upload-area').style.display='none';
+    document.getElementById('notion-scan-status').textContent='🔍 AIがNotionの内容を解析中...';
+
+    const b64data = base64.split(',')[1];
+    const mediaType = file.type||'image/jpeg';
+
+    const promptText = [
+      'このNotionのスクリーンショットを読み取って、家計簿・行動ログとして記録できる情報を抽出してください。',
+      '',
+      '抽出できる情報の種類:',
+      '1. 家計簿: 日付・金額・カテゴリ・メモ（支出/収入）',
+      '2. 行動ログ: 日付・行動名（勉強/運動/自炊など）・量・単位',
+      '',
+      'カテゴリキー（家計簿）: food, eat-out, alcohol, transport, utility, health, fitness, beauty, education, clothing, leisure, travel, other, income',
+      '',
+      '今日の日付: ' + new Date().toISOString().slice(0,10),
+      '',
+      'JSON形式のみ返してください:',
+      '{',
+      '  "kakeibo": [{"date":"YYYY-MM-DD","type":"expense|income","cat":"カテゴリキー","memo":"メモ","amount":金額}],',
+      '  "actions": [{"date":"YYYY-MM-DD","name":"行動名","amount":量,"unit":"単位"}],',
+      '  "summary": "読み取った内容の概要（20字以内）"',
+      '}'
+    ].join('\n');
+
+    try{
+      const res = await fetch('https://api.anthropic.com/v1/messages',{
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          model:'claude-sonnet-4-20250514', max_tokens:1500,
+          messages:[{role:'user', content:[
+            {type:'image', source:{type:'base64', media_type:mediaType, data:b64data}},
+            {type:'text', text:promptText}
+          ]}]
+        })
+      });
+      const data = await res.json();
+      const text = data.content.map(c=>c.text||'').join('').replace(/```json|```/g,'').trim();
+      const result = JSON.parse(text);
+
+      notionScanItems = [];
+      (result.kakeibo||[]).forEach(k=>notionScanItems.push({type:'kakeibo', data:k}));
+      (result.actions||[]).forEach(a=>notionScanItems.push({type:'action', data:a}));
+
+      if(!notionScanItems.length){
+        document.getElementById('notion-scan-status').textContent = '記録できる情報が見つかりませんでした。別のスクショを試してください。';
+        document.getElementById('notion-scan-upload-area').style.display='block';
+        return;
+      }
+
+      document.getElementById('notion-scan-status').textContent =
+        '✓ ' + (result.summary||'') + '  ' + notionScanItems.length + '件見つかりました';
+      renderNotionScanItems();
+
+    }catch(err){
+      document.getElementById('notion-scan-status').innerHTML =
+        '<span style="color:var(--red)">読み取りに失敗しました。もう一度試してください。</span>';
+      document.getElementById('notion-scan-upload-area').style.display='block';
+    }
+  };
+  reader.readAsDataURL(file);
+}
+
+function renderNotionScanItems(){
+  const list = document.getElementById('notion-scan-items-list');
+  const tabsEl = document.getElementById('notion-scan-tabs');
+  const kakeibo = notionScanItems.filter(i=>i.type==='kakeibo');
+  const actions = notionScanItems.filter(i=>i.type==='action');
+
+  // タブ表示
+  tabsEl.innerHTML = '';
+    const mkTab = (type, label, active) => {
+    const b = document.createElement('button');
+    b.className = 'ctab' + (active?' active':'');
+    b.style.fontSize = '11px';
+    b.textContent = label;
+    b.onclick = () => filterNotionScanTab(type, b);
+    return b;
+  };
+  if(kakeibo.length) tabsEl.appendChild(mkTab('kakeibo', '💰 家計簿 '+kakeibo.length+'件', true));
+  if(actions.length) tabsEl.appendChild(mkTab('action', '⭐ 行動ログ '+actions.length+'件', !kakeibo.length));
+  if(kakeibo.length) filterNotionScanTab('kakeibo', tabsEl.firstChild);
+  else if(actions.length) filterNotionScanTab('action', tabsEl.firstChild);
+
+  document.getElementById('notion-scan-results').style.display='block';
+  document.getElementById('notion-scan-confirm-btn').textContent = notionScanItems.length + '件をすべて記録する';
+}
+
+let currentNotionTab = 'kakeibo';
+function filterNotionScanTab(tab, btn){
+  currentNotionTab = tab;
+  document.querySelectorAll('#notion-scan-tabs .ctab').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+
+  const list = document.getElementById('notion-scan-items-list');
+  const items = notionScanItems.filter(i=>i.type===tab);
+  list.innerHTML = items.map((item,idx)=>{
+    const realIdx = notionScanItems.indexOf(item);
+    if(tab==='kakeibo'){
+      const k = item.data;
+      const hk = HK_CATS[k.cat]||HK_CATS.other;
+      return '<div style="background:var(--s2);border-radius:var(--rs);padding:10px 12px;display:flex;align-items:center;gap:8px">' +
+        '<span style="font-size:18px">'+hk.emoji+'</span>' +
+        '<div style="flex:1;min-width:0">' +
+          '<input value="'+(k.memo||hk.label)+'" oninput="notionScanItems['+realIdx+'].data.memo=this.value" ' +
+            'style="width:100%;border:none;background:transparent;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink);padding:0;margin-bottom:3px">' +
+          '<div style="display:flex;gap:6px;align-items:center">' +
+            '<input type="date" value="'+k.date+'" oninput="notionScanItems['+realIdx+'].data.date=this.value" ' +
+              'style="font-size:11px;border:none;background:transparent;color:var(--ink3);font-family:var(--sans);padding:0">' +
+            '<select oninput="notionScanItems['+realIdx+'].data.cat=this.value" style="font-size:11px;border:none;background:transparent;color:var(--ink3);font-family:var(--sans);padding:0">' +
+              Object.entries(HK_CATS).map(([kk,v])=>'<option value="'+kk+'" '+(kk===k.cat?'selected':'')+'>'+v.emoji+' '+v.label+'</option>').join('') +
+            '</select>' +
+          '</div>' +
+        '</div>' +
+        '<div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:4px">' +
+          '<span style="font-size:11px;color:var(--ink3)">¥</span>' +
+          '<input type="number" value="'+(k.amount||0)+'" oninput="notionScanItems['+realIdx+'].data.amount=parseInt(this.value)||0" ' +
+            'style="width:80px;border:1px solid var(--bdr);border-radius:6px;padding:4px 6px;font-family:var(--sans);font-size:13px;font-weight:500;text-align:right;background:var(--bg);color:var(--ink)">' +
+        '</div>' +
+        '<button onclick="notionScanItems.splice('+realIdx+',1);renderNotionScanItems()" style="border:none;background:none;color:var(--red);font-size:18px;cursor:pointer;padding:0;flex-shrink:0">×</button>' +
+      '</div>';
+    } else {
+      const a = item.data;
+      const actionDef = rewardSettings.actions.find(x=>x.name.includes(a.name)||a.name.includes(x.name))||{icon:'⭐'};
+      return '<div style="background:var(--s2);border-radius:var(--rs);padding:10px 12px;display:flex;align-items:center;gap:8px">' +
+        '<span style="font-size:18px">'+actionDef.icon+'</span>' +
+        '<div style="flex:1;min-width:0">' +
+          '<input value="'+(a.name||'')+'" oninput="notionScanItems['+realIdx+'].data.name=this.value" ' +
+            'style="width:100%;border:none;background:transparent;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink);padding:0;margin-bottom:3px">' +
+          '<input type="date" value="'+a.date+'" oninput="notionScanItems['+realIdx+'].data.date=this.value" ' +
+            'style="font-size:11px;border:none;background:transparent;color:var(--ink3);font-family:var(--sans);padding:0">' +
+        '</div>' +
+        '<div style="text-align:right;flex-shrink:0;display:flex;align-items:center;gap:4px">' +
+          '<input type="number" value="'+(a.amount||1)+'" oninput="notionScanItems['+realIdx+'].data.amount=parseFloat(this.value)||1" ' +
+            'style="width:60px;border:1px solid var(--bdr);border-radius:6px;padding:4px 6px;font-family:var(--sans);font-size:13px;text-align:right;background:var(--bg);color:var(--ink)">' +
+          '<span style="font-size:11px;color:var(--ink3)">'+(a.unit||'回')+'</span>' +
+        '</div>' +
+        '<button onclick="notionScanItems.splice('+realIdx+',1);renderNotionScanItems()" style="border:none;background:none;color:var(--red);font-size:18px;cursor:pointer;padding:0;flex-shrink:0">×</button>' +
+      '</div>';
+    }
+  }).join('');
+}
+
+function confirmNotionScanItems(){
+  let kakeiboCount = 0, actionCount = 0;
+  notionScanItems.forEach(item=>{
+    if(item.type==='kakeibo'){
+      const k = item.data;
+      if(!k.amount) return;
+      kakeibo.push({id:nextHkId++, date:k.date, type:k.type||'expense', cat:k.cat||'other', memo:k.memo||'', amount:k.amount});
+      kakeiboCount++;
+    } else {
+      const a = item.data;
+      if(!a.name) return;
+      // ポイント設定に合う行動を探してポイント計算
+      const actionDef = rewardSettings.actions.find(x=>x.name.includes(a.name)||a.name.includes(x.name));
+      const pts = actionDef ? Math.round(actionDef.pointPer * (a.amount||1)) : 0;
+      rewardLogs.push({id:nextRewardLogId++, date:a.date, actionId:actionDef?actionDef.id:0, amount:a.amount||1, points:pts});
+      actionCount++;
+    }
+  });
+  save();
+  if(kakeiboCount) renderKakeibo();
+  if(actionCount){ renderRewardSummary(); saveBankAccounts(); }
+  updateSim();
+  closeNotionScanModal();
+  const msg = [kakeiboCount?'家計簿'+kakeiboCount+'件':'', actionCount?'行動ログ'+actionCount+'件':''].filter(Boolean).join('・') + 'を記録しました';
+  showToast(msg);
+  scheduleAiLive();
+}
+
 /* ===== 初期化 ===== */
+loadBankAccounts();
 initStorage();
 
 /* ===== PWA: マニフェストをインラインで生成 ===== */
@@ -1700,33 +3806,6 @@ initStorage();
   const link = document.getElementById('pwa-manifest');
   if(link) link.href = manifestUrl;
 
-  // Service Worker をインラインで登録（オフライン対応）
-  if('serviceWorker' in navigator){
-    const swCode = `
-const CACHE = 'subsave-v1';
-const ASSETS = [self.location.href];
-self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
-  self.skipWaiting();
-});
-self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(keys =>
-    Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-  ));
-  self.clients.claim();
-});
-self.addEventListener('fetch', e => {
-  e.respondWith(
-    caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match(e.request)))
-  );
-});
-`;
-    const swBlob = new Blob([swCode], {type:'text/javascript'});
-    const swUrl = URL.createObjectURL(swBlob);
-    navigator.serviceWorker.register(swUrl).then(() => {
-      console.log('SW registered');
-    }).catch(e => console.log('SW error:', e));
-  }
 
   // インストール促進バナー
   let deferredPrompt = null;
